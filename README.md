@@ -7,7 +7,7 @@ directly as a checker input.
 
 ## Vector file format
 
-Each file in `vectors/` is one JSON object:
+Each vector is one JSON file at the top of this repository, named `a01-…` to `f01-…`. Each is one JSON object:
 
 - `name`, `section`, `description`: what the vector tests and where in the draft.
 - `record_b64`: the exact bytes of the verdict record, base64. Exact bytes matter:
@@ -47,13 +47,20 @@ So that the vectors do not depend on any other format's rules, they use these:
   which is a FAIL of step 3.
 - The result is `"pass"` when body[value] >= body[min], else `"fail"`.
 
+## Running the checkers
+
+    python3 vrcheck.py [a-f][0-9][0-9]-*.json
+    python3 blind-checker.py . .
+
+`gen.py` regenerates the vectors in the current directory.
+
 ## How the expected answers were checked
 
 - The expected answers were written by hand from the draft text, each with the section
   it rests on. A reference checker (`vrcheck.py`) was then written and run against them.
 - A second checker was written by a separate agent that was given only the draft, this
   README (without this section or the open points) and the vectors with no expected
-  answers. It is in `blind-checker/` with the readings it had to choose.
+  answers. It is `blind-checker.py`, with the readings it had to choose in `blind-checker-readings.md` and its raw results in `blind-checker-results.json`.
 - On the first comparison the two agreed on the state of all 37 vectors. They disagreed
   on step results in two places (b03 and c11). The text supported the blind checker's
   reading on b03, and it was adopted. c11 is now tested on its state only.

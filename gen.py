@@ -3,7 +3,7 @@ Each vector's expected outcome is written here by hand from the draft text, with
 section it rests on, and is NOT computed by the reference checker."""
 import base64, hashlib, json, os
 
-OUT = "vectors"
+OUT = "."
 os.makedirs(OUT, exist_ok=True)
 
 def C(o):
