@@ -1,0 +1,30 @@
+{
+  "name": "c11-claim-ref-not-in-evidence",
+  "section": "2.3",
+  "description": "body.claim.ref names an item that evidence does not list.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJyZWYiOnsiZm9ybWF0IjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6Zm9ybWF0Om9wYXF1ZSIsInNoYTI1NiI6ImEzNWJlZjUwODM0Y2JlYjE5OTUyOGY4NDgwZmM3N2Q0MWYyY2FmOTA1OWY3NDcwOGNjOWVkYjM1Yzk5NjRlODIifX0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn1dLCJrZXkiOiJrLTAwMDEiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "6954663665c1594e7268072c24c056b12341ab48f972799bad6b403722a8c035",
+  "evidence_items": [
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "refused",
+    "steps": null
+  },
+  "depends_on_interpretation": "I-2"
+}

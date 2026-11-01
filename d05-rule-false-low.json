@@ -1,0 +1,33 @@
+{
+  "name": "d05-rule-false-low",
+  "section": "4.3 step 3",
+  "description": "The rule re-runs to fail and the record states fail.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoidCJ9LCJtZWFzdXJlZCI6MywidGhyZXNob2xkIjo1fSwiY2hlY2siOnsiaW5wdXRzIjp7Im1pbiI6InRocmVzaG9sZCIsInZhbHVlIjoibWVhc3VyZWQifSwicmVzdWx0IjoiZmFpbCIsInJ1bGUiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpydWxlOmF0LWxlYXN0In0sImV2aWRlbmNlIjpbeyJmb3JtYXQiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpmb3JtYXQ6b3BhcXVlIiwic2hhMjU2IjoiZTNiZjNhM2ZjZDViOTVlNzhjZjEzMDNmOWVlMzAxZDk3MDMyMjcxZGQyMThmMDM4ZTFhMmM4MjY1YmQxZDU2ZCJ9XSwia2V5Ijoiay0wMDAxIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+  "record_sha256": "06f96d2915fb6dea12f5033ed5203801a2c830f4004013d4db60bb02cd4fd9f7",
+  "evidence_items": [
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    }
+  }
+}

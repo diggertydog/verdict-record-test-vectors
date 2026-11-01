@@ -1,0 +1,30 @@
+{
+  "name": "c12-empty-evidence",
+  "section": "4.3 step 2",
+  "description": "An empty evidence array: every entry (none) is held and verifies.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOltdLCJrZXkiOiJrLTAwMDEiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "c1e17db1d34879c680582b496d80d389eafb36ca3e1edd8300cf5b0615eaddae",
+  "evidence_items": [],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    }
+  },
+  "depends_on_interpretation": "I-3"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "c10-cites-refused-record",
+  "section": "4.3 step 2",
+  "description": "Cites a verdict record that is itself refused: the item does not verify.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InZlcmRpY3QtcmVjb3JkLzEiLCJzaGEyNTYiOiI2YTdhOGU5NjI5ZDg2YTczYTQ4NjkxZWZiMDMxMDlkZjM3M2IwZWMyZjRhYzQwYTljNTBjODM3ZDc4ODAwNzNjIn1dLCJrZXkiOiJrLW91dGVyMiIsImtpbmQiOiJjaGVjay1ydW4iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "52a173a6aa389caafd259a81e5e6e392ecf41206f0f1c545aa35a8ea53d500b6",
+  "evidence_items": [
+    {
+      "b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJmYWlsIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn1dLCJrZXkiOiJrLWJhZCIsImtpbmQiOiJjaGVjay1ydW4iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+      "upper_time_bound": "2026-11-01T11:00:00.000000Z"
+    },
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "held",
+    "steps": {
+      "1": "PASS",
+      "2": "NOT RUN",
+      "3": "PASS"
+    }
+  },
+  "depends_on_interpretation": "I-6"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "c07-cites-released-record",
+  "section": "4.3 step 2",
+  "description": "Cites a verdict record that is itself released, with an earlier upper time bound.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InZlcmRpY3QtcmVjb3JkLzEiLCJzaGEyNTYiOiIxODA2NTcyNDk0NTA2ZjQ1N2EzNThkY2IxNDlkZDY5NmU1OWFiMTBiYWNhZjJjOTU2YWU3ODQyZjVlZWQwY2VmIn1dLCJrZXkiOiJrLW91dGVyIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+  "record_sha256": "3e032027cb80155553f49f4172ca6680d78d0030340efb5ea673a15f6190d045",
+  "evidence_items": [
+    {
+      "b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn1dLCJrZXkiOiJrLWlubmVyIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+      "upper_time_bound": "2026-11-01T11:00:00.000000Z"
+    },
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    }
+  }
+}

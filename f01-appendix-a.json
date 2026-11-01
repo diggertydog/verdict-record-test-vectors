@@ -1,0 +1,30 @@
+{
+  "name": "f01-appendix-a",
+  "section": "Appendix A",
+  "description": "The draft's own example. Its digest is 2a85c94e...; the second evidence item's bytes are not published, so an outside checker holds only the claim record.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTAtMjNUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoiY2hlY2tlci03IiwibW9kZWwiOiJleGFtcGxlLW1vZGVsIiwibW9kZWxfdmVyc2lvbiI6IjEiLCJ0eXBlIjoic3lzdGVtIn0sImJvZHkiOnsiY2xhaW0iOnsicmVmIjp7ImZvcm1hdCI6ImFwcGxpY2F0aW9uL2pzb24iLCJzaGEyNTYiOiJmNDc0N2YxZmExYWQ2M2VhYWQ5MGU0MWI1ODc3OTRmOGY1YzgyZjkyMTViOWE4ZTIzYTZjMjA0ZWRhYmM3ZDQ4In19fSwiY2hlY2siOnsicmVzdWx0Ijoic3VwcG9ydGVkIiwicnVsZSI6Imp1ZGdlbWVudCJ9LCJldmlkZW5jZSI6W3siZm9ybWF0IjoiYXBwbGljYXRpb24vanNvbiIsInNoYTI1NiI6ImY0NzQ3ZjFmYTFhZDYzZWFhZDkwZTQxYjU4Nzc5NGY4ZjVjODJmOTIxNWI5YThlMjNhNmMyMDRlZGFiYzdkNDgifSx7ImZvcm1hdCI6Imh0dHBzOi8vZGF0YXRyYWNrZXIuaWV0Zi5vcmcvZG9jL2RyYWZ0LWdydXN6a2Etc2lnbmVkLWV2YWx1YXRpb24tcmVjZWlwdHMvIiwic2hhMjU2IjoiMGM5NjRmNDVjNDUwYTAyNTNmYzA5ZWIyMzE2ZTZhZDI3MTk0NGJlMjAxYzQ2ZWJmMmM1ZDQwZTUyOWYzNTMwNiJ9XSwia2V5IjoidmVyZGljdC0wMDAxIiwia2luZCI6Im1vZGVsLWRlY2lzaW9uIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJ2ZXJpZmllci5leGFtcGxlIn0=",
+  "record_sha256": "2a85c94e39c56f50185b3b69b8f56026946364631799774a83b4f93399841c45",
+  "evidence_items": [
+    {
+      "b64": "eyJtYWRlX2J5IjoiYnVpbGRlci5leGFtcGxlIiwic3RhdGVtZW50IjoiUmVsZWFzZSAyLjEgb2YgZXhhbXBsZS1zZXJ2aWNlIHBhc3NlZCBpdHMgYWNjZXB0YW5jZSBzdWl0ZS4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [],
+    "max_depth": 2
+  },
+  "policy_sha256": "d1c897d91d1f308364cf0bbb9aa45062e83939b36a7bf6a1236b794f75d85624",
+  "expected": {
+    "state": "held",
+    "steps": {
+      "1": "PASS",
+      "2": "NOT RUN",
+      "3": "PASS"
+    }
+  },
+  "depends_on_interpretation": "I-4"
+}

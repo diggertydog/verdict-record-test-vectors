@@ -1,0 +1,30 @@
+{
+  "name": "a12-depth-33",
+  "section": "2.1",
+  "description": "Nesting 33 levels deep: a checker MUST refuse it.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoidCJ9LCJkZWVwIjp7ImEiOnsiYSI6eyJhIjp7ImEiOnsiYSI6eyJhIjp7ImEiOnsiYSI6eyJhIjp7ImEiOnsiYSI6eyJhIjp7ImEiOnsiYSI6eyJhIjp7ImEiOnsiYSI6eyJhIjp7ImEiOnsiYSI6eyJhIjp7ImEiOnsiYSI6eyJhIjp7ImEiOnsiYSI6eyJhIjp7ImEiOnsiYSI6eyJhIjp7ImEiOjF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19LCJtZWFzdXJlZCI6NywidGhyZXNob2xkIjo1fSwiY2hlY2siOnsiaW5wdXRzIjp7Im1pbiI6InRocmVzaG9sZCIsInZhbHVlIjoibWVhc3VyZWQifSwicmVzdWx0IjoicGFzcyIsInJ1bGUiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpydWxlOmF0LWxlYXN0In0sImV2aWRlbmNlIjpbeyJmb3JtYXQiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpmb3JtYXQ6b3BhcXVlIiwic2hhMjU2IjoiZTNiZjNhM2ZjZDViOTVlNzhjZjEzMDNmOWVlMzAxZDk3MDMyMjcxZGQyMThmMDM4ZTFhMmM4MjY1YmQxZDU2ZCJ9XSwia2V5Ijoiay0wMDAxIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+  "record_sha256": "ddb8978e29cc31a448e66c1b6332c83a2b1e766efaf5c5405b725e34af226fc1",
+  "evidence_items": [
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "refused",
+    "steps": null
+  },
+  "depends_on_interpretation": "I-1"
+}

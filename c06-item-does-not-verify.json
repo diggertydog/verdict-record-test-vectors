@@ -1,0 +1,33 @@
+{
+  "name": "c06-item-does-not-verify",
+  "section": "4.3 step 2",
+  "description": "The item does not verify by its format.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpuZXZlci12ZXJpZmllcyIsInNoYTI1NiI6ImEzNWJlZjUwODM0Y2JlYjE5OTUyOGY4NDgwZmM3N2Q0MWYyY2FmOTA1OWY3NDcwOGNjOWVkYjM1Yzk5NjRlODIifV0sImtleSI6ImstMDAwMSIsImtpbmQiOiJjaGVjay1ydW4iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "d4926cd7fa878bce3826173d404fbcfb09a44912e6ad8275536f747294070daf",
+  "evidence_items": [
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSB0d286IGFuIGl0ZW0gdGhhdCBuZXZlciB2ZXJpZmllcw=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "held",
+    "steps": {
+      "1": "PASS",
+      "2": "NOT RUN",
+      "3": "PASS"
+    }
+  }
+}
