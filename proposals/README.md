@@ -24,6 +24,11 @@ three test-only formats:
 | p05-evidence-age | Should a policy be able to set a maximum evidence age, measured between upper time bounds and never by a clock? | released |
 | p06-salted-commitment | Should a salted commitment be an evidence format, so a record can point at personal data without carrying it? | held |
 | p07-negative-judgement-no-cause | Should a refusal reached by judgement have to cite at least one item it rests on? | released |
+| p08-irontrellis-refusal | A verdict over a published IronTrellis authority history, whose rule is IronTrellis's own replay and whose result is a refusal with its cause. Is this the right binding for a third party to re-run it? | held without the IronTrellis rule; released or refused with it |
+
+p08 cites two files of the IronTrellis repository at a pinned commit, too large to embed: `evidence_fetch` gives
+the URL and SHA-256 of each. Its rule inputs are bound to evidence by JSON Pointer, which is -02 text, so the
+reference checker here (written for -01) does not run it.
 
 ## Running
 

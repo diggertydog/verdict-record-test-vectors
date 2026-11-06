@@ -157,6 +157,39 @@ P("p07-negative-judgement-no-cause",
   "Not released: a negative result reached by judgement with no evidence would fail a new requirement (step 2 FAIL, state refused), or a policy could list result values that need evidence. A mechanical rule's refusal already carries its cause, because the rule and its inputs are in the record.",
   items=(), rests_on="Sections 4.3 steps 1-3; -01 open point I-3 (empty evidence passes step 2)")
 
+# p08 -- a verdict over a published authority history (IronTrellis), carrying the refusal's cause
+IT_COMMIT = "a2c487f6cd3afee2e35c7f7f1b64c9d966bf8387"
+IT_RAW = "https://raw.githubusercontent.com/zerohourzulu/irontrellis/" + IT_COMMIT + "/conformance/v2-g3/"
+IT_SUITE_FMT = "https://github.com/zerohourzulu/irontrellis/tree/" + IT_COMMIT + "/conformance/v2-g3#vectors"
+IT_HIST_FMT = "https://github.com/zerohourzulu/irontrellis/tree/" + IT_COMMIT + "/conformance/v2-g3#histories"
+IT_RULE = "https://github.com/zerohourzulu/irontrellis/tree/" + IT_COMMIT + "/conformance#authorization"
+SUITE_SHA = "6e97be5b26e39cae691c260787abc2f74790506348f6e62aaa25a3d5c5f8be34"   # vectors.json, 1,388,651 bytes
+HIST_SHA = "307fdb7ceb170a7f14341a6f1ca8b54cbb7facc9e87a5e72d1e82bf4f8955777"    # histories/budget-v2.json, 39,414 bytes
+IT_RESULT = {"budgetId": None, "code": "AMOUNT_EXCEEDED", "controllingAuthorityIds": None, "decision": "DENY",
+             "failureCodes": ["AMOUNT_EXCEEDED"], "scopeAssurance": "REPLAY_VERIFIED"}
+r08 = C(rec(key="irontrellis-v2-g3-authority-denial-precedes-budgets",
+            evidence=[{"format": IT_SUITE_FMT, "sha256": SUITE_SHA}, {"format": IT_HIST_FMT, "sha256": HIST_SHA}],
+            check={"rule": IT_RULE,
+                   "inputs": {"case": {"evidence": 0, "pointer": "/57"}, "history": {"evidence": 1, "pointer": ""}},
+                   "result": IT_RESULT},
+            body={"claim": {"text": "Replaying the authority history refuses the request in conformance case authorization/v2/authority-denial-precedes-budgets, with cause AMOUNT_EXCEEDED."}}))
+IT_POLICY = {"judgement_kinds": [], "formats": [IT_SUITE_FMT, IT_HIST_FMT], "max_depth": 0}
+cases.append({
+    "name": "p08-irontrellis-refusal",
+    "proposal": "V13-09 one evidence slot; V13-10 a refusal carries its cause. Offered to the IronTrellis author on the AUDIT list, 6 Nov 2026.",
+    "open_question": "Does a verdict record carry an authority-history refusal, with its cause, so that any checker holding the history's replay re-derives it?",
+    "description": "A check-run verdict whose rule is IronTrellis's own authorization replay, at a pinned commit. Its two inputs are bound to evidence: the conformance case (vectors.json, entry 57) and the 40-event history it names. The stated result is the case's published expected answer: DENY, cause AMOUNT_EXCEEDED. The evidence items are too large to embed, so each is cited by digest with the URL of its exact bytes.",
+    "record_b64": B(r08), "record_sha256": H(r08),
+    "evidence_items": [],
+    "evidence_fetch": [{"url": IT_RAW + "vectors.json", "sha256": SUITE_SHA, "bytes": 1388651},
+                       {"url": IT_RAW + "histories/budget-v2.json", "sha256": HIST_SHA, "bytes": 39414}],
+    "upper_time_bound": UB, "policy": IT_POLICY, "policy_sha256": H(C(IT_POLICY)),
+    "expected_under_02": {
+        "state": "held", "steps": {"1": "PASS", "2": "PASS", "3": "NOT RUN"},
+        "rests_on": "Sections 2.2 (inputs bound to evidence by JSON Pointer), 4.3 steps 2 and 3. For a checker that holds both items (fetched and matched by digest) and whose format rules accept them, but that does not hold the IronTrellis rule: step 3 NOT RUN, naming the rule. A checker that holds the rule re-runs it: released if the replay gives this result, refused if it does not."},
+    "proposed": "No change to -02 is needed for this case: it is the evidence slot doing its job. It shows a refusal carrying its cause mechanically, because the rule and its inputs are in the record. The question for the IronTrellis author: is this the right rule name and input binding for a third party to re-run his replay?",
+    "status": "PROPOSAL: not draft text. For discussion at IETF 127."})
+
 for c in cases:
     with open(os.path.join(OUT, c["name"] + ".json"), "w", encoding="utf-8") as f:
         json.dump(c, f, indent=2, ensure_ascii=False)

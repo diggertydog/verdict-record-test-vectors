@@ -1,0 +1,42 @@
+{
+  "name": "p08-irontrellis-refusal",
+  "proposal": "V13-09 one evidence slot; V13-10 a refusal carries its cause. Offered to the IronTrellis author on the AUDIT list, 6 Nov 2026.",
+  "open_question": "Does a verdict record carry an authority-history refusal, with its cause, so that any checker holding the history's replay re-derives it?",
+  "description": "A check-run verdict whose rule is IronTrellis's own authorization replay, at a pinned commit. Its two inputs are bound to evidence: the conformance case (vectors.json, entry 57) and the 40-event history it names. The stated result is the case's published expected answer: DENY, cause AMOUNT_EXCEEDED. The evidence items are too large to embed, so each is cited by digest with the URL of its exact bytes.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiUmVwbGF5aW5nIHRoZSBhdXRob3JpdHkgaGlzdG9yeSByZWZ1c2VzIHRoZSByZXF1ZXN0IGluIGNvbmZvcm1hbmNlIGNhc2UgYXV0aG9yaXphdGlvbi92Mi9hdXRob3JpdHktZGVuaWFsLXByZWNlZGVzLWJ1ZGdldHMsIHdpdGggY2F1c2UgQU1PVU5UX0VYQ0VFREVELiJ9fSwiY2hlY2siOnsiaW5wdXRzIjp7ImNhc2UiOnsiZXZpZGVuY2UiOjAsInBvaW50ZXIiOiIvNTcifSwiaGlzdG9yeSI6eyJldmlkZW5jZSI6MSwicG9pbnRlciI6IiJ9fSwicmVzdWx0Ijp7ImJ1ZGdldElkIjpudWxsLCJjb2RlIjoiQU1PVU5UX0VYQ0VFREVEIiwiY29udHJvbGxpbmdBdXRob3JpdHlJZHMiOm51bGwsImRlY2lzaW9uIjoiREVOWSIsImZhaWx1cmVDb2RlcyI6WyJBTU9VTlRfRVhDRUVERUQiXSwic2NvcGVBc3N1cmFuY2UiOiJSRVBMQVlfVkVSSUZJRUQifSwicnVsZSI6Imh0dHBzOi8vZ2l0aHViLmNvbS96ZXJvaG91cnp1bHUvaXJvbnRyZWxsaXMvdHJlZS9hMmM0ODdmNmNkM2FmZWUyZTM1YzdmN2YxYjY0YzlkOTY2YmY4Mzg3L2NvbmZvcm1hbmNlI2F1dGhvcml6YXRpb24ifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6Imh0dHBzOi8vZ2l0aHViLmNvbS96ZXJvaG91cnp1bHUvaXJvbnRyZWxsaXMvdHJlZS9hMmM0ODdmNmNkM2FmZWUyZTM1YzdmN2YxYjY0YzlkOTY2YmY4Mzg3L2NvbmZvcm1hbmNlL3YyLWczI3ZlY3RvcnMiLCJzaGEyNTYiOiI2ZTk3YmU1YjI2ZTM5Y2FlNjkxYzI2MDc4N2FiYzJmNzQ3OTA1MDYzNDhmNmU2MmFhYTI1YTNkNWM1ZjhiZTM0In0seyJmb3JtYXQiOiJodHRwczovL2dpdGh1Yi5jb20vemVyb2hvdXJ6dWx1L2lyb250cmVsbGlzL3RyZWUvYTJjNDg3ZjZjZDNhZmVlMmUzNWM3ZjdmMWI2NGM5ZDk2NmJmODM4Ny9jb25mb3JtYW5jZS92Mi1nMyNoaXN0b3JpZXMiLCJzaGEyNTYiOiIzMDdmZGI3Y2ViMTcwYTdmMTQzNDFhNmYxY2E4YjU0Y2JiN2ZhY2M5ZTg3YTVlNzJkMWU4MmJmNGY4OTU1Nzc3In1dLCJrZXkiOiJpcm9udHJlbGxpcy12Mi1nMy1hdXRob3JpdHktZGVuaWFsLXByZWNlZGVzLWJ1ZGdldHMiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "4027b41d1f2a1cdf5afc72754b36e4de99156769c548c6f390e0f4de8dbf9759",
+  "evidence_items": [],
+  "evidence_fetch": [
+    {
+      "url": "https://raw.githubusercontent.com/zerohourzulu/irontrellis/a2c487f6cd3afee2e35c7f7f1b64c9d966bf8387/conformance/v2-g3/vectors.json",
+      "sha256": "6e97be5b26e39cae691c260787abc2f74790506348f6e62aaa25a3d5c5f8be34",
+      "bytes": 1388651
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zerohourzulu/irontrellis/a2c487f6cd3afee2e35c7f7f1b64c9d966bf8387/conformance/v2-g3/histories/budget-v2.json",
+      "sha256": "307fdb7ceb170a7f14341a6f1ca8b54cbb7facc9e87a5e72d1e82bf4f8955777",
+      "bytes": 39414
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [],
+    "formats": [
+      "https://github.com/zerohourzulu/irontrellis/tree/a2c487f6cd3afee2e35c7f7f1b64c9d966bf8387/conformance/v2-g3#vectors",
+      "https://github.com/zerohourzulu/irontrellis/tree/a2c487f6cd3afee2e35c7f7f1b64c9d966bf8387/conformance/v2-g3#histories"
+    ],
+    "max_depth": 0
+  },
+  "policy_sha256": "8ee3814ccf206eb87e2c5d1bd9d21d65d16d362867248c287fc11ff40ddf2e8c",
+  "expected_under_02": {
+    "state": "held",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "NOT RUN"
+    },
+    "rests_on": "Sections 2.2 (inputs bound to evidence by JSON Pointer), 4.3 steps 2 and 3. For a checker that holds both items (fetched and matched by digest) and whose format rules accept them, but that does not hold the IronTrellis rule: step 3 NOT RUN, naming the rule. A checker that holds the rule re-runs it: released if the replay gives this result, refused if it does not."
+  },
+  "proposed": "No change to -02 is needed for this case: it is the evidence slot doing its job. It shows a refusal carrying its cause mechanically, because the rule and its inputs are in the record. The question for the IronTrellis author: is this the right rule name and input binding for a third party to re-run his replay?",
+  "status": "PROPOSAL: not draft text. For discussion at IETF 127."
+}
