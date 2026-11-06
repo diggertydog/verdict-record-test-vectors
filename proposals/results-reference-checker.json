@@ -1,0 +1,97 @@
+{
+  "p01-model-declared": {
+    "reference_checker": {
+      "state": "released",
+      "steps": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS"
+      },
+      "reasons": {},
+      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788"
+    },
+    "agrees_with_expected_under_02": true
+  },
+  "p02-model-attested": {
+    "reference_checker": {
+      "state": "released",
+      "steps": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS"
+      },
+      "reasons": {},
+      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788"
+    },
+    "agrees_with_expected_under_02": true
+  },
+  "p03-model-proof-after-reply": {
+    "reference_checker": {
+      "state": "held",
+      "steps": {
+        "1": "PASS",
+        "2": "NOT RUN",
+        "3": "PASS"
+      },
+      "reasons": {
+        "2": "evidence[1]: its upper time bound is later than the record's"
+      },
+      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788"
+    },
+    "agrees_with_expected_under_02": true
+  },
+  "p04-cites-superseded-version": {
+    "reference_checker": {
+      "state": "released",
+      "steps": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS"
+      },
+      "reasons": {},
+      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788"
+    },
+    "agrees_with_expected_under_02": true
+  },
+  "p05-evidence-age": {
+    "reference_checker": {
+      "state": "released",
+      "steps": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS"
+      },
+      "reasons": {},
+      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788"
+    },
+    "agrees_with_expected_under_02": true
+  },
+  "p06-salted-commitment": {
+    "reference_checker": {
+      "state": "held",
+      "steps": {
+        "1": "PASS",
+        "2": "NOT RUN",
+        "3": "PASS"
+      },
+      "reasons": {
+        "2": "evidence[0]: format not listed by policy"
+      },
+      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788"
+    },
+    "agrees_with_expected_under_02": true
+  },
+  "p07-negative-judgement-no-cause": {
+    "reference_checker": {
+      "state": "released",
+      "steps": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS"
+      },
+      "reasons": {},
+      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788"
+    },
+    "agrees_with_expected_under_02": true
+  }
+}

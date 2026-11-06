@@ -1,0 +1,47 @@
+{
+  "name": "p04-cites-superseded-version",
+  "proposal": "V13-07 when a result stops counting; -02 Appendix B open question on supersedes",
+  "open_question": "When a checker holds a later version of a record that another record cites, what should it report about the citing record?",
+  "description": "An outer record cites version 1 of k-inner. The checker also holds version 2 of k-inner, which supersedes version 1 and reaches the opposite result. Both versions are released on their own.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InZlcmRpY3QtcmVjb3JkLzEiLCJzaGEyNTYiOiIxODA2NTcyNDk0NTA2ZjQ1N2EzNThkY2IxNDlkZDY5NmU1OWFiMTBiYWNhZjJjOTU2YWU3ODQyZjVlZWQwY2VmIn1dLCJrZXkiOiJrLW91dGVyIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+  "record_sha256": "3e032027cb80155553f49f4172ca6680d78d0030340efb5ea673a15f6190d045",
+  "evidence_items": [
+    {
+      "b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn1dLCJrZXkiOiJrLWlubmVyIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+      "upper_time_bound": "2026-11-01T11:00:00.000000Z"
+    },
+    {
+      "b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjozLCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJmYWlsIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn1dLCJrZXkiOiJrLWlubmVyIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOiIxODA2NTcyNDk0NTA2ZjQ1N2EzNThkY2IxNDlkZDY5NmU1OWFiMTBiYWNhZjJjOTU2YWU3ODQyZjVlZWQwY2VmIiwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoyLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+      "upper_time_bound": "2026-11-01T11:30:00.000000Z"
+    },
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1",
+      "urn:example:verdict-record:format:provider-attestation",
+      "urn:example:verdict-record:format:inference-proof"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+  "expected_under_02": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    },
+    "rests_on": "Sections 4.3 step 2, 6, Appendix B"
+  },
+  "proposed": "Same state: version 1 remains a true record of what was decided on its evidence, and no step may rely on the absence of a later version. The report adds that a later version of a cited record is held, naming it, so a reader sees the result has been reassessed. Reassessment of the outer record is a new record (Section 6).",
+  "status": "PROPOSAL: not draft text. For discussion at IETF 127."
+}

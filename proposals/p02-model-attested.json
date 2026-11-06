@@ -1,0 +1,42 @@
+{
+  "name": "p02-model-attested",
+  "proposal": "V13-06 binding strength",
+  "open_question": "As p01. Under -02 this case and p01 give the same report, which is the gap.",
+  "description": "The same decision with a provider's signed statement about the model attached as evidence (test format: provider-attestation, which always verifies here).",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoiYXNzZXNzb3ItMSIsIm1vZGVsIjoiZXhhbXBsZS1tb2RlbCIsIm1vZGVsX3ZlcnNpb24iOiIxIiwidHlwZSI6InN5c3RlbSJ9LCJib2R5Ijp7ImNsYWltIjp7InRleHQiOiJUaGUgcmVxdWVzdCBtZWV0cyB0aGUgc3RhdGVkIHBvbGljeS4ifX0sImNoZWNrIjp7InJlc3VsdCI6InN1cHBvcnRlZCIsInJ1bGUiOiJqdWRnZW1lbnQifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn0seyJmb3JtYXQiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpmb3JtYXQ6cHJvdmlkZXItYXR0ZXN0YXRpb24iLCJzaGEyNTYiOiJjMTczNjY5ZWI4MzgzZGM1ZDI3MGNlZGI3YjIzMDMwYTc4MWQwMTUyZmIxMTY3MjdlYThkOTJkMTFkOWNmNzRiIn1dLCJrZXkiOiJrLTAwMDEiLCJraW5kIjoibW9kZWwtZGVjaXNpb24iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "590ef636add53545c86f7fbd1bec7308bf2e137b564f9592693d98a7abb8ce8a",
+  "evidence_items": [
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    },
+    {
+      "b64": "eyJtb2RlbCI6ImV4YW1wbGUtbW9kZWwiLCJtb2RlbF92ZXJzaW9uIjoiMSIsInNpZ25lZF9ieSI6InByb3ZpZGVyLmV4YW1wbGUiLCJzdGF0ZW1lbnQiOiJUaGlzIG1vZGVsIHNlcnZlZCB0aGUgcmVxdWVzdC4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1",
+      "urn:example:verdict-record:format:provider-attestation",
+      "urn:example:verdict-record:format:inference-proof"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+  "expected_under_02": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    },
+    "rests_on": "Sections 2.2, 4.3 step 2, 7"
+  },
+  "proposed": "Same state. The report adds: model binding 'attested' -- a provider's statement about the model is attached and verifies under its format. A policy could require at least 'attested' for kinds that need it.",
+  "status": "PROPOSAL: not draft text. For discussion at IETF 127."
+}

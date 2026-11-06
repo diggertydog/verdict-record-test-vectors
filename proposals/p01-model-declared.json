@@ -1,0 +1,39 @@
+{
+  "name": "p01-model-declared",
+  "proposal": "V13-06 binding strength",
+  "open_question": "Should a checker report how strongly a record shows which model produced it, derived from what is attached rather than from what the writer says?",
+  "description": "A model decision that names its model only in actor.model, with nothing attached about the model.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoiYXNzZXNzb3ItMSIsIm1vZGVsIjoiZXhhbXBsZS1tb2RlbCIsIm1vZGVsX3ZlcnNpb24iOiIxIiwidHlwZSI6InN5c3RlbSJ9LCJib2R5Ijp7ImNsYWltIjp7InRleHQiOiJUaGUgcmVxdWVzdCBtZWV0cyB0aGUgc3RhdGVkIHBvbGljeS4ifX0sImNoZWNrIjp7InJlc3VsdCI6InN1cHBvcnRlZCIsInJ1bGUiOiJqdWRnZW1lbnQifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn1dLCJrZXkiOiJrLTAwMDEiLCJraW5kIjoibW9kZWwtZGVjaXNpb24iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "e4887183c5b24494b763ce6ca02ebcaaf86ee77cce9d7e5c4c12443915e08a85",
+  "evidence_items": [
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1",
+      "urn:example:verdict-record:format:provider-attestation",
+      "urn:example:verdict-record:format:inference-proof"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+  "expected_under_02": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    },
+    "rests_on": "Sections 2.2 (actor), 4.2 (a statement by the issuer alone can be reported but cannot make a step pass)"
+  },
+  "proposed": "Same state. The report adds: model binding 'declared' -- the writer's statement only, nothing attached shows it. The record carries no new member; the strength is derived by the checker.",
+  "status": "PROPOSAL: not draft text. For discussion at IETF 127."
+}

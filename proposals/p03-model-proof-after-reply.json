@@ -1,0 +1,43 @@
+{
+  "name": "p03-model-proof-after-reply",
+  "proposal": "V13-06 binding strength (with the FlashProve correction)",
+  "open_question": "When a proof of which model ran is produced only after the answer was given and relied on, should it count as 'proven' for that record?",
+  "description": "The same decision citing a proof of inference whose own upper time bound is later than the record's (test format: inference-proof, which always verifies here). Some serving set-ups send the answer before any proof exists.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoiYXNzZXNzb3ItMSIsIm1vZGVsIjoiZXhhbXBsZS1tb2RlbCIsIm1vZGVsX3ZlcnNpb24iOiIxIiwidHlwZSI6InN5c3RlbSJ9LCJib2R5Ijp7ImNsYWltIjp7InRleHQiOiJUaGUgcmVxdWVzdCBtZWV0cyB0aGUgc3RhdGVkIHBvbGljeS4ifX0sImNoZWNrIjp7InJlc3VsdCI6InN1cHBvcnRlZCIsInJ1bGUiOiJqdWRnZW1lbnQifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn0seyJmb3JtYXQiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpmb3JtYXQ6aW5mZXJlbmNlLXByb29mIiwic2hhMjU2IjoiNmM5M2JiMjRmOTIxN2UwNzRjZGJmY2Y0N2VkNjBjOTQ5YzYzYmRmYTYyNDg0ODlkMmQ0ZjkxMTNiY2U5MDUwNyJ9XSwia2V5Ijoiay0wMDAxIiwia2luZCI6Im1vZGVsLWRlY2lzaW9uIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "0ea7ad56e4bf04e5705dfac264d2613965ad5bce085b558d2df6dee451588beb",
+  "evidence_items": [
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    },
+    {
+      "b64": "eyJtb2RlbF9kaWdlc3QiOiIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwIiwib3V0cHV0X2RpZ2VzdCI6ImU0ODg3MTgzYzViMjQ0OTRiNzYzY2U2Y2EwMmViY2FhZjg2ZWU3N2NjZTlkN2U1YzRjMTI0NDM5MTVlMDhhODUiLCJwcm9vZiI6InRlc3Qtb25seSJ9",
+      "upper_time_bound": "2026-11-01T13:00:00.000000Z"
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1",
+      "urn:example:verdict-record:format:provider-attestation",
+      "urn:example:verdict-record:format:inference-proof"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+  "expected_under_02": {
+    "state": "held",
+    "steps": {
+      "1": "PASS",
+      "2": "NOT RUN",
+      "3": "PASS"
+    },
+    "rests_on": "Section 4.3 step 2 (upper time bound of a cited item)"
+  },
+  "proposed": "Same as -02, with no new text: Section 4.3 step 2 already refuses to rely on an item whose upper time bound is later than the citing record's. 'Proven' is reported only when the proof's bound is not later than the record's.",
+  "status": "PROPOSAL: not draft text. For discussion at IETF 127."
+}

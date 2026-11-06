@@ -1,0 +1,39 @@
+{
+  "name": "p06-salted-commitment",
+  "proposal": "V13-08 erasure receipt; V13-05 cross-border fingerprints",
+  "open_question": "Should a salted commitment be an evidence format in its own right, so a record can point at personal data without carrying it, and only a party holding the salt can check what it points at?",
+  "description": "A record of a completed forget request cites a commitment to the item, not the item. The checker's policy does not list the salted-commitment format.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIGZvcmdldCByZXF1ZXN0IHdhcyBjYXJyaWVkIG91dCBpbiB0aGUgc3RvcmVzIGNvdmVyZWQuIn19LCJjaGVjayI6eyJyZXN1bHQiOiJlcmFzdXJlLWNvbmZpcm1lZCIsInJ1bGUiOiJqdWRnZW1lbnQifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpzYWx0ZWQtY29tbWl0bWVudCIsInNoYTI1NiI6IjVkMGEwYjRmMWI4ZGRkNmJmODdkNmZjZGM0ZjE2YjZlODk3NzQzM2EyYjk0YjY5OGE3ZjE1MmJlZGE1YjEyMzAifV0sImtleSI6ImstMDAwMSIsImtpbmQiOiJtb2RlbC1kZWNpc2lvbiIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+  "record_sha256": "123bfc3279eda757e1bd435cf0d31aa53322cb6492b12ddb53b0757759cbfcef",
+  "evidence_items": [
+    {
+      "b64": "eyJjb21taXRtZW50IjoiYmIzODc5MjVhZWE0Nzc3MWRiN2M2NDRmMzg4OTkyNWRiZjU3MGIwYmM1ODk3NDNjODgwZTJlMTI1MzI5ODYwNSIsInByb2JlX3JlY292ZXJlZCI6ZmFsc2UsInNjaGVtZSI6InNoYTI1NihzYWx0fHxpdGVtKSIsInN0b3Jlc19jb3ZlcmVkIjpbImNoYXQtbG9nIiwibWVtb3J5LXN1bW1hcnkiLCJ2ZWN0b3ItaW5kZXgiXX0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1",
+      "urn:example:verdict-record:format:provider-attestation",
+      "urn:example:verdict-record:format:inference-proof"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+  "expected_under_02": {
+    "state": "held",
+    "steps": {
+      "1": "PASS",
+      "2": "NOT RUN",
+      "3": "PASS"
+    },
+    "rests_on": "Sections 2.1 (no salted digest), 4.3 step 2, 4.5"
+  },
+  "proposed": "Same state for a checker without the salt, by design: the core digest rule is unchanged and -02's 'no salted or hiding form of digest' stays true of the core. A checker that holds the salt and lists the format can verify the commitment and release the record. The salt, and anything a fingerprint of personal data counts as, stays with the controller.",
+  "status": "PROPOSAL: not draft text. For discussion at IETF 127."
+}

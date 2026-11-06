@@ -194,6 +194,9 @@ RULES = {"urn:example:verdict-record:rule:at-least": rule_at_least}
 TEST_FORMATS = {
     "urn:example:verdict-record:format:opaque": True,       # every item verifies
     "urn:example:verdict-record:format:never-verifies": False,
+    # Test-only formats used by the proposal cases in proposals/ (each verifies, like opaque):
+    "urn:example:verdict-record:format:provider-attestation": True,
+    "urn:example:verdict-record:format:inference-proof": True,
 }
 
 

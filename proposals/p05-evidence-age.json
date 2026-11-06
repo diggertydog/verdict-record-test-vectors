@@ -1,0 +1,43 @@
+{
+  "name": "p05-evidence-age",
+  "proposal": "V13-07 when a result stops counting (maximum evidence age as the reader's policy)",
+  "open_question": "Should a checker's policy be able to set a maximum age for cited evidence, measured between the record's upper time bound and each item's, never by the checker's clock?",
+  "description": "An outer record cites a record whose upper time bound is two years earlier than its own.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InZlcmRpY3QtcmVjb3JkLzEiLCJzaGEyNTYiOiJjMGY3NmVlM2JkOTFiYWU3MWJlNjc2MWQxZWI5ZWMwMDQ4YjhkZGRiMjBiNGRiNjIxMzBlMzgzNjZjOTAxMGEwIn1dLCJrZXkiOiJrLW91dGVyNSIsImtpbmQiOiJjaGVjay1ydW4iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "cfeb8fda0dc9b31a02f7cdb5b3af908cb38b9150b1f2cd2a6d393b5da38bf4dc",
+  "evidence_items": [
+    {
+      "b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn1dLCJrZXkiOiJrLW9sZCIsImtpbmQiOiJjaGVjay1ydW4iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+      "upper_time_bound": "2024-11-01T11:00:00.000000Z"
+    },
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSBvbmU6IGFuIG9wYXF1ZSB0ZXN0IGl0ZW0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1",
+      "urn:example:verdict-record:format:provider-attestation",
+      "urn:example:verdict-record:format:inference-proof"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+  "expected_under_02": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    },
+    "rests_on": "Sections 4.1 (no step reads the checker's clock), 4.5"
+  },
+  "proposed": "With the base policy: same state. With a policy member such as max_evidence_age (not defined in -02, so a -02 checker reads that policy as invalid and gives no verdict), step 2 would be NOT RUN for an item older than the limit, and the state held. Two checkers holding the same inputs still give the same result, because no clock is read.",
+  "status": "PROPOSAL: not draft text. For discussion at IETF 127."
+}

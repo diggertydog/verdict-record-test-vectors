@@ -1,0 +1,35 @@
+{
+  "name": "p07-negative-judgement-no-cause",
+  "proposal": "V13-10 a refusal or held verdict carries its cause",
+  "open_question": "Should a negative judgement (a refusal) be required to cite at least one item it rests on, so a bare 'deny' cannot be released?",
+  "description": "A model decision refuses a request, by judgement, and cites no evidence at all.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoiYXNzZXNzb3ItMSIsIm1vZGVsIjoiZXhhbXBsZS1tb2RlbCIsIm1vZGVsX3ZlcnNpb24iOiIxIiwidHlwZSI6InN5c3RlbSJ9LCJib2R5Ijp7ImNsYWltIjp7InRleHQiOiJUaGUgYWdlbnQncyByZXF1ZXN0IHRvIHNlbmQgdGhlIHBheW1lbnQgaXMgYWxsb3dlZC4ifX0sImNoZWNrIjp7InJlc3VsdCI6ImRlbnkiLCJydWxlIjoianVkZ2VtZW50In0sImV2aWRlbmNlIjpbXSwia2V5Ijoiay0wMDAxIiwia2luZCI6Im1vZGVsLWRlY2lzaW9uIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "bbca769acf4a8b929ee5d2bf2fd44e135c0e10114a9bfeb0dd199e9f84d4abc0",
+  "evidence_items": [],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1",
+      "urn:example:verdict-record:format:provider-attestation",
+      "urn:example:verdict-record:format:inference-proof"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+  "expected_under_02": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    },
+    "rests_on": "Sections 4.3 steps 1-3; -01 open point I-3 (empty evidence passes step 2)"
+  },
+  "proposed": "Not released: a negative result reached by judgement with no evidence would fail a new requirement (step 2 FAIL, state refused), or a policy could list result values that need evidence. A mechanical rule's refusal already carries its cause, because the rule and its inputs are in the record.",
+  "status": "PROPOSAL: not draft text. For discussion at IETF 127."
+}
