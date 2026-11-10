@@ -1,0 +1,39 @@
+{
+  "name": "g02-bound-digest-released",
+  "section": "draft-wright-verdict-record-02 lines 292-295",
+  "duties": [
+    "D15"
+  ],
+  "description": "An input bound to an item with no pointer is the digest the checker computes; the other reads that digest from a second item.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIHZhbHVlIG4gb2YgdGhlIGNpdGVkIGl0ZW0gaXMgYXQgbGVhc3QgaXRzIHZhbHVlIG0uIn19LCJjaGVjayI6eyJpbnB1dHMiOnsiYSI6eyJldmlkZW5jZSI6MH0sImIiOnsiZXZpZGVuY2UiOjEsInBvaW50ZXIiOiIvZGlnZXN0In19LCJyZXN1bHQiOiJlcXVhbCIsInJ1bGUiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpydWxlOmVxdWFscyJ9LCJldmlkZW5jZSI6W3siZm9ybWF0IjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6Zm9ybWF0Om9wYXF1ZSIsInNoYTI1NiI6ImMwNGIxODExZmZhZDg5ZGUwYzE3N2ExMWYxYTYxYWEzM2Q4OTg1ZjczMTlkMmQ1ZWEzMzJhOTVjNDVjYTA1ODUifSx7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlODFhZmRiZThiYzJjMzZmZTIzZTUwZGM4OGIyMWNiYzhkYWVlZDYyY2U1NjJiYjlmZjRkMWZlMjAwZjBhY2ZlIn1dLCJrZXkiOiJrLTAwMDIiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "e19f4034067b8f4b4cf210e0e5688f5c50a3f47a2bfd77205cba88cb03bf7b02",
+  "evidence_items": [
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSB0d286IGFuIG9wYXF1ZSBpdGVtIHRoYXQgaXMgbm90IEpTT04="
+    },
+    {
+      "b64": "eyJkaWdlc3QiOiJjMDRiMTgxMWZmYWQ4OWRlMGMxNzdhMTFmMWE2MWFhMzNkODk4NWY3MzE5ZDJkNWVhMzMyYTk1YzQ1Y2EwNTg1In0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    }
+  }
+}

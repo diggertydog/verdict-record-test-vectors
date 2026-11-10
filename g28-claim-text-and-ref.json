@@ -1,0 +1,34 @@
+{
+  "name": "g28-claim-text-and-ref",
+  "section": "draft-wright-verdict-record-02 lines 310-313",
+  "duties": [
+    "D17"
+  ],
+  "description": "body.claim with both text and ref: refused before any step.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJyZWYiOnsiZm9ybWF0IjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6Zm9ybWF0Om9wYXF1ZSIsInNoYTI1NiI6ImYzY2UzN2JiNmEyM2QyMTI0MmRmYjNlNmMzMDNkOGE3MTdhOTFjMGFhY2EwZDFlYzViZTRiNmU1NmIwNjRhNTEifSwidGV4dCI6InQifSwibWVhc3VyZWQiOjcsInRocmVzaG9sZCI6NX0sImNoZWNrIjp7ImlucHV0cyI6eyJtaW4iOiJ0aHJlc2hvbGQiLCJ2YWx1ZSI6Im1lYXN1cmVkIn0sInJlc3VsdCI6InBhc3MiLCJydWxlIjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6cnVsZTphdC1sZWFzdCJ9LCJldmlkZW5jZSI6W3siZm9ybWF0IjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6Zm9ybWF0Om9wYXF1ZSIsInNoYTI1NiI6ImYzY2UzN2JiNmEyM2QyMTI0MmRmYjNlNmMzMDNkOGE3MTdhOTFjMGFhY2EwZDFlYzViZTRiNmU1NmIwNjRhNTEifV0sImtleSI6ImstMDAwMiIsImtpbmQiOiJjaGVjay1ydW4iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "3c2adff5a7258dd32923d137b9e5d33862d3ddccc6665e6cdc251d3257a728d5",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "refused",
+    "steps": null,
+    "no_step_runs": true
+  },
+  "depends_on_interpretation": "O-14"
+}

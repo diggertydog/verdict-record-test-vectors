@@ -27,20 +27,17 @@ three test-only formats:
 | p08-irontrellis-refusal | A verdict over a published IronTrellis authority history, whose rule is IronTrellis's own replay and whose result is a refusal with its cause. Is this the right binding for a third party to re-run it? | held without the IronTrellis rule; released or refused with it |
 
 p08 cites two files of the IronTrellis repository at a pinned commit, too large to embed: `evidence_fetch` gives
-the URL and SHA-256 of each. Its rule inputs are bound to evidence by JSON Pointer, which is -02 text, so the
-reference checker here (written for -01) does not run it.
+the URL and SHA-256 of each. Its rule inputs are bound to evidence by JSON Pointer, which is -02 text. The reference checker, now written for -02,
+runs it once the two items are fetched into `proposals/p08-evidence/` (or `P08_EVIDENCE`): it holds neither the
+IronTrellis formats nor the IronTrellis rule, so it gives `held` with step 2 NOT RUN and step 3 NOT RUN. That agrees
+with `expected_under_02` on the state and differs on step 2, because `expected_under_02` describes a checker whose
+format rules accept the two items. The difference is left as it is: it is open point O-4 of the top-level README.
 
 ## Running
 
     python3 proposals/gen.py      # regenerates the cases
     python3 proposals/run.py      # runs the reference checker and compares with expected_under_02
 
-`results-reference-checker.json` holds the reference checker's results: it agrees with `expected_under_02` on all
-seven. The reference checker was written on the author's side, so that agreement is not independent. **Results
-from checkers written by other parties are wanted**, and a disagreement is the most useful result: it shows where
-the text does not settle the answer.
-
-## Where the proposals come from
-
-Each case names its entry in the proposed-changes log for the next version of the standard behind this draft
-(V13-05 to V13-10). The log is a working document; nothing in it is decided until the author says so.
+`results-reference-checker.json` holds the reference checker's results: it agrees with `expected_under_02` on p01 to
+p07, and on p08's state but not its step 2 (above). The reference checker was written on the author's side. A
+disagreement between checkers is the most useful result: it shows where the text does not settle the answer.

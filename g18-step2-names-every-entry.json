@@ -1,0 +1,39 @@
+{
+  "name": "g18-step2-names-every-entry",
+  "section": "draft-wright-verdict-record-02 lines 397-404",
+  "duties": [
+    "D24",
+    "D25"
+  ],
+  "description": "Two entries step 2 cannot rely on, for two reasons: step 2 is NOT RUN and names both.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpuZXZlci12ZXJpZmllcyIsInNoYTI1NiI6ImVmNWQxNmIzOWQ3ZTEwN2ZiZWY2Mzk0MzNhNDVjODdmODQxNTBmOTMxNzVjZTcyZDYwNDZmODc2MmQwMTc2NDkifSx7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJjMDRiMTgxMWZmYWQ4OWRlMGMxNzdhMTFmMWE2MWFhMzNkODk4NWY3MzE5ZDJkNWVhMzMyYTk1YzQ1Y2EwNTg1In1dLCJrZXkiOiJrLTAwMDIiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "f6c8662b013a59eedb9baaa4f9332e84be2c5445f20669a99c889dec4678ff96",
+  "evidence_items": [
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSB0aHJlZTogYW4gaXRlbSB3aG9zZSBmb3JtYXQncyBydWxlcyBhcmUgbmV2ZXIgbWV0"
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "held",
+    "steps": {
+      "1": "PASS",
+      "2": "NOT RUN",
+      "3": "PASS"
+    },
+    "not_relied_on": 2
+  },
+  "depends_on_interpretation": "O-3"
+}

@@ -1,0 +1,3707 @@
+{
+ "case_commit_read": "9e1c7a0b047129d71c5694995e0014eecdf2289c",
+ "case_commit_brief": "9e1c7a0b047129d71c5694995e0014eecdf2289c",
+ "supplementary": [
+  {
+   "dir": "negatives/N13-a2-altered-after-the-verdict-cited-it",
+   "record": "verdict-record.json",
+   "condition": "item at evidence[1] (fc818ef47954) withheld, as what.txt states",
+   "stated": {
+    "state": "held",
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    }
+   },
+   "ours": {
+    "state": "held",
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    },
+    "reasons": {
+     "2": "evidence[1]: no item held with this digest",
+     "3": "input attachment is bound to evidence[1], which the checker does not hold; input attempted_spec_digest is bound to evidence[1], which the checker does not hold"
+    },
+    "summary": "state held; step 1 PASS; step 2 NOT RUN; step 3 NOT RUN"
+   }
+  },
+  {
+   "dir": "negatives/N13-a2-altered-after-the-verdict-cited-it",
+   "record": "verdict-record-other-result.json",
+   "condition": "item at evidence[1] (fc818ef47954) withheld, as what.txt states",
+   "stated": {
+    "state": "held",
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    }
+   },
+   "ours": {
+    "state": "held",
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    },
+    "reasons": {
+     "2": "evidence[1]: no item held with this digest",
+     "3": "input attachment is bound to evidence[1], which the checker does not hold; input attempted_spec_digest is bound to evidence[1], which the checker does not hold"
+    },
+    "summary": "state held; step 1 PASS; step 2 NOT RUN; step 3 NOT RUN"
+   }
+  }
+ ],
+ "policy_sha256": "c2839fed12d7a006c89810a8e5dfaab83558fcca314e080191a4a84bb5c02582",
+ "report_policy_sha256": "c2839fed12d7a006c89810a8e5dfaab83558fcca314e080191a4a84bb5c02582",
+ "held": [
+  {
+   "module": "held_test_suite",
+   "source": {
+    "url": "https://github.com/diggertydog/verdict-record-test-vectors/blob/checker-to-02/README.md",
+    "sections": [
+     "Test-only evidence formats",
+     "Test-only rule"
+    ],
+    "also": "proposals/README.md (provider-attestation, inference-proof)"
+   },
+   "rules": [
+    "urn:example:verdict-record:rule:at-least",
+    "urn:example:verdict-record:rule:equals"
+   ],
+   "formats": [
+    "urn:example:verdict-record:format:opaque",
+    "urn:example:verdict-record:format:never-verifies",
+    "urn:example:verdict-record:format:provider-attestation",
+    "urn:example:verdict-record:format:inference-proof"
+   ],
+   "containers": []
+  },
+  {
+   "module": "held_dps_007f8c9",
+   "source": {
+    "rule": "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/blob/9e1c7a0b047129d71c5694995e0014eecdf2289c/interop/verdict-record/README.md#L31-L41",
+    "format_split": "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/blob/9e1c7a0b047129d71c5694995e0014eecdf2289c/interop/verdict-record/README.md#L43-L50 and #L151-L158 (ambiguity 5)",
+    "format_specifications": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e",
+    "reference_check": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding/tests/run_checks.py",
+    "record_seal": "https://github.com/decision-provenance-standard/standard/blob/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding/README.md#L124",
+    "stopgap": "rule name points at tree/main; held as the text at 9e1c7a0b047129d71c5694995e0014eecdf2289c"
+   },
+   "rules": [
+    "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1"
+   ],
+   "formats": [
+    "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+    "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0"
+   ],
+   "containers": []
+  },
+  {
+   "module": "held_container_detached_ed25519",
+   "source": {
+    "url": "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/blob/9e1c7a0b047129d71c5694995e0014eecdf2289c/interop/verdict-record/README.md#L127-L129",
+    "stopgap": "stand-in container; retires when a SCITT container rule is held"
+   },
+   "rules": [],
+   "formats": [],
+   "containers": [
+    "detached-ed25519-signature"
+   ]
+  }
+ ],
+ "rows": [
+  {
+   "dir": "positive",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "positive",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "stated-negative",
+   "record": "verdict-record.json",
+   "record_sha256": "bead1b0061dbdc7a00ff09ec86edc7ae48615386cd6b11aa37bd67e825052068",
+   "stated": {
+    "record_sha256": "bead1b0061dbdc7a00ff09ec86edc7ae48615386cd6b11aa37bd67e825052068",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "not_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "bf039e138fcbaa6e483ef4b72a34a13f2822ddc842e740a6c8e1240066ec77b1",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "not_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "failed",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": false,
+      "b": true,
+      "c": false,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "stated-negative",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "7faec6938f2a204cf41d9bc2f997573287ab9f684f9a3ce20e06c5f0c5969c34",
+   "stated": {
+    "record_sha256": "7faec6938f2a204cf41d9bc2f997573287ab9f684f9a3ce20e06c5f0c5969c34",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "not_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "bf039e138fcbaa6e483ef4b72a34a13f2822ddc842e740a6c8e1240066ec77b1",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"not_as_approved\", the record states \"executed_as_approved\""
+    },
+    "re_run_result": "not_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "failed",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": false,
+      "b": true,
+      "c": false,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N1-approval-of-other-arguments-everything-downstream-claims-as-approved",
+   "record": "verdict-record.json",
+   "record_sha256": "6a97529f8e3348aaa184aa28922ce32321958761bdfbd7a7c265481f1de04c20",
+   "stated": {
+    "record_sha256": "6a97529f8e3348aaa184aa28922ce32321958761bdfbd7a7c265481f1de04c20",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "not_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "bf039e138fcbaa6e483ef4b72a34a13f2822ddc842e740a6c8e1240066ec77b1",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"not_as_approved\", the record states \"executed_as_approved\""
+    },
+    "re_run_result": "not_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "failed",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": false,
+      "b": true,
+      "c": false,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N1-approval-of-other-arguments-everything-downstream-claims-as-approved",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "ba1fb6e84da689971913ad7a136f03b125b93380c6701c3a59561f8569731bcb",
+   "stated": {
+    "record_sha256": "ba1fb6e84da689971913ad7a136f03b125b93380c6701c3a59561f8569731bcb",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "not_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "bf039e138fcbaa6e483ef4b72a34a13f2822ddc842e740a6c8e1240066ec77b1",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "not_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "failed",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": false,
+      "b": true,
+      "c": false,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N2-verdict-altered-after-the-packet-cited-it",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N2-verdict-altered-after-the-packet-cited-it",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N3-settlement-150-with-headline-120",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N3-settlement-150-with-headline-120",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N4-confirm-without-approval",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N4-confirm-without-approval",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N5-packet-cites-another-verdict-about-the-same-chain",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N5-packet-cites-another-verdict-about-the-same-chain",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N6-custody-event-altered",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N6-custody-event-altered",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N7-ledger-event-altered-after-chaining",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N7-ledger-event-altered-after-chaining",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N8-settlement-anchor-content-changed-hash-stale",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N8-settlement-anchor-content-changed-hash-stale",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N9-manifest-without-settlement-block",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N9-manifest-without-settlement-block",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N10-receipt-payload-edited-after-signing",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N10-receipt-payload-edited-after-signing",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N11-receipt-signed-by-a-key-not-the-issuers",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N11-receipt-signed-by-a-key-not-the-issuers",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N12-issuer-id-not-the-kid",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N12-issuer-id-not-the-kid",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N13-a2-altered-after-the-verdict-cited-it",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "held",
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    },
+    "re_run_result": null,
+    "why": {
+     "2": "Section 4.3 step 2: no item held with the digest of entry 1",
+     "3": "Section 4.3 step 3: attachment: bound to evidence[1], which step 2 does not rely on; attempted_spec_digest: bound to evidence[1], which step 2 does not rely on"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": false
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N13-a2-altered-after-the-verdict-cited-it",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "held",
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    },
+    "re_run_result": null,
+    "why": {
+     "2": "Section 4.3 step 2: no item held with the digest of entry 1",
+     "3": "Section 4.3 step 3: attachment: bound to evidence[1], which step 2 does not rely on; attempted_spec_digest: bound to evidence[1], which step 2 does not rely on"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": false
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N14-dispute-reason-code-missing",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N14-dispute-reason-code-missing",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N15-approval-after-the-allow-outcome",
+   "record": "verdict-record.json",
+   "record_sha256": "7ec6d26fab700c23532dc111d474a1e0c88521f8d25756e490d0572d0dbd5469",
+   "stated": {
+    "record_sha256": "7ec6d26fab700c23532dc111d474a1e0c88521f8d25756e490d0572d0dbd5469",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "not_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "bf290ab3049655ddc424ab7d2630c1d26bd56088000dbcdfc390389169a2d725",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "5b7b8ddea1949f0cd77b44058b545f99941cbae76e129f7fd4dbd7f400d3e595",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"not_as_approved\", the record states \"executed_as_approved\""
+    },
+    "re_run_result": "not_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "failed",
+       "action_binding": "verified",
+       "stage_order": "failed",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": false,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N15-approval-after-the-allow-outcome",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d8de49e60c5164733f9eeaeaf44de1f2a1f874dfd25d4229b4a657b40b5e8e34",
+   "stated": {
+    "record_sha256": "d8de49e60c5164733f9eeaeaf44de1f2a1f874dfd25d4229b4a657b40b5e8e34",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "not_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "bf290ab3049655ddc424ab7d2630c1d26bd56088000dbcdfc390389169a2d725",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "5b7b8ddea1949f0cd77b44058b545f99941cbae76e129f7fd4dbd7f400d3e595",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "not_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "failed",
+       "action_binding": "verified",
+       "stage_order": "failed",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": false,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N16-one-approval-used-twice",
+   "record": "verdict-record.json",
+   "record_sha256": "f3133b4e9361b0db8fb44a085447e01efc6eedf402673fd094aebcd3160ad8bb",
+   "stated": {
+    "record_sha256": "f3133b4e9361b0db8fb44a085447e01efc6eedf402673fd094aebcd3160ad8bb",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "not_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "d6daaecf46fa306417fcfaf88e0eeab1c68e3762d9c354b50283b75ec6e68887",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"not_as_approved\", the record states \"executed_as_approved\""
+    },
+    "re_run_result": "not_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "failed",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": false,
+      "b": true,
+      "c": false,
+      "d": false
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N16-one-approval-used-twice",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "966fe6ea9b58b77b975bd12e3b3a0e6f8a59d1286844b731b6ff9974f9b8e845",
+   "stated": {
+    "record_sha256": "966fe6ea9b58b77b975bd12e3b3a0e6f8a59d1286844b731b6ff9974f9b8e845",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "not_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "d6daaecf46fa306417fcfaf88e0eeab1c68e3762d9c354b50283b75ec6e68887",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "not_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "failed",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": false,
+      "b": true,
+      "c": false,
+      "d": false
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N17-money-moved-nothing-recorded",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N17-money-moved-nothing-recorded",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N18-action-packet-hash-not-the-action-hash",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N18-action-packet-hash-not-the-action-hash",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N19-scope-event-executed-action-altered-and-rechained",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N19-scope-event-executed-action-altered-and-rechained",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N20-manifest-without-any-settlement-block",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N20-manifest-without-any-settlement-block",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N21-approval-event-for-another-action",
+   "record": "verdict-record.json",
+   "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+   "stated": {
+    "record_sha256": "875dfb8823e851c92373cb767dd8318e145a3cda41a7882f0bf79dec6411ea43",
+    "state": "released",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {},
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "released",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "PASS"
+    },
+    "reasons": {},
+    "re_run_result": "executed_as_approved",
+    "container": "shows the record",
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
+    "not_relied_on": []
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N21-approval-event-for-another-action",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+   "stated": {
+    "record_sha256": "d11f8bf415d9103c0da7ef1e43b2515e2521d9e6111002abccf1a78ad54ec8e1",
+    "state": "refused",
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "re_run_result": "executed_as_approved",
+    "why": {
+     "3": "Section 4.3 step 3: the re-run result does not equal check.result"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "fc818ef47954d7d365f24461dbb4381b630f231b95a86a8aacf219c31463b677",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "refused",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "PASS",
+     "3": "FAIL"
+    },
+    "reasons": {
+     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+    },
+    "re_run_result": "executed_as_approved",
+    "container": null,
+    "rule_detail": {
+     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
+      "eight_dimensions": {
+       "specification_digests": "verified",
+       "specification_statements": "verified",
+       "record_statements": "verified",
+       "action_binding": "verified",
+       "stage_order": "verified",
+       "authorisation_recheck": "verified",
+       "observed_results": "verified",
+       "rationale_provenance": "verified"
+      },
+      "required": true,
+      "a": true,
+      "b": true,
+      "c": true,
+      "d": true
+     }
+    },
+    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
+    "not_relied_on": []
+   },
+   "container_published": false
+  }
+ ]
+}

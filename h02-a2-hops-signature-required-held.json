@@ -1,0 +1,42 @@
+{
+  "name": "h02-a2-hops-signature-required-held",
+  "section": "draft-wright-verdict-record-02 lines 1185-1187, 417-419",
+  "duties": [
+    "D25",
+    "D30",
+    "A.2"
+  ],
+  "description": "The same, under hop format rules that require the signature the hops lack: held, at step 2.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTAtMzFUMTg6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoiYWdlbnR0cnVzdC10cmFjZS1jaGVja2VyIiwibW9kZWwiOiJub25lIiwibW9kZWxfdmVyc2lvbiI6IjAiLCJ0eXBlIjoic3lzdGVtIn0sImJvZHkiOnsiY2xhaW0iOnsidGV4dCI6ImhvcFsxXSBwcmVzZXJ2ZXMgU0hBLTI1NiBwYXJlbnRfcmVjb3JkX2hhc2ggY29udGludWl0eSBhbmQgbW9ub3RvbmljIHNjb3BlIGF0dGVudWF0aW9uIGZyb20gaG9wWzBdIn19LCJjaGVjayI6eyJpbnB1dHMiOnsiY2hpbGRfc2NvcGVzIjp7ImV2aWRlbmNlIjoxLCJwb2ludGVyIjoiL2dyYW50ZWRfc2NvcGVzIn0sInBhcmVudF9kaWdlc3QiOnsiZXZpZGVuY2UiOjB9LCJwYXJlbnRfaGFzaCI6eyJldmlkZW5jZSI6MSwicG9pbnRlciI6Ii9wYXJlbnRfcmVjb3JkX2hhc2gifSwicGFyZW50X3Njb3BlcyI6eyJldmlkZW5jZSI6MCwicG9pbnRlciI6Ii9ncmFudGVkX3Njb3BlcyJ9fSwicmVzdWx0IjoiYXR0ZW51YXRlZF9hbmRfbGlua2VkIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6aG9wLWNvbnRpbnVpdHktYXR0ZW51YXRpb246djEifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6Imh0dHBzOi8vZGF0YXRyYWNrZXIuaWV0Zi5vcmcvZG9jL2RyYWZ0LWR1cmdhLWFnZW50dHJ1c3QtdHJhY2UtdmVyaWZpY2F0aW9uLyIsInNoYTI1NiI6IjEzMzYzMzdlODhhZGM2Nzg1M2I4MGI0OTk4MzYzMjEwZGM1YzA3OTdjYzdiN2M3MjIxMjhjZWNjNTZhMzhjMTQifSx7ImZvcm1hdCI6Imh0dHBzOi8vZGF0YXRyYWNrZXIuaWV0Zi5vcmcvZG9jL2RyYWZ0LWR1cmdhLWFnZW50dHJ1c3QtdHJhY2UtdmVyaWZpY2F0aW9uLyIsInNoYTI1NiI6Ijg4ODY3OTVkNDQwM2I1Y2Q4ODIwZWI4MTNlZTA3MjRmMWQ2ZDVkMzgzMTI0MzY0YjA5Y2RjNTAyMDYzOWUwMGMifV0sImtleSI6ImFnZW50dHJ1c3QvdHJhY2UvaG9wLTEiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJhZ2VudHRydXN0LXJlZmVyZW5jZS12ZXJpZmllciJ9",
+  "record_sha256": "62017940a8ddddd5ddd7ff46c8ff2a6ce79dfcccb775d767b8dff8db0ebe19ed",
+  "evidence_items": [
+    {
+      "b64": "eyJleHBpcmVzX2F0IjoxNzkzNDYzNjAwLCJncmFudGVkX3Njb3BlcyI6WyJtY3A6dG9vbDplcnAubGVkZ2VyLnJlYWQiLCJtY3A6bWF4X3Jvd3M6MTAwIl0sImlzc3VlZF9hdCI6MTc5MzQ2MDAwMH0="
+    },
+    {
+      "b64": "eyJleHBpcmVzX2F0IjoxNzkzNDYzNjAwLCJncmFudGVkX3Njb3BlcyI6WyJtY3A6dG9vbDplcnAubGVkZ2VyLnJlYWQiXSwiaXNzdWVkX2F0IjoxNzkzNDYwMDAwLCJwYXJlbnRfcmVjb3JkX2hhc2giOiIxMzM2MzM3ZTg4YWRjNjc4NTNiODBiNDk5ODM2MzIxMGRjNWMwNzk3Y2M3YjdjNzIyMTI4Y2VjYzU2YTM4YzE0In0="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [],
+    "formats": [
+      "https://datatracker.ietf.org/doc/draft-durga-agenttrust-trace-verification/"
+    ],
+    "max_depth": 0,
+    "inputs_from_evidence_only": true
+  },
+  "policy_sha256": "f8f3653081eeaff344cce03a0d9c1a73a263502c6e672315f2f93f3823bed0e5",
+  "expected": {
+    "state": "held",
+    "steps": {
+      "1": "PASS",
+      "2": "NOT RUN",
+      "3": "NOT RUN"
+    }
+  },
+  "hold": [
+    "appendix_a2_rule.py",
+    "appendix_a2_hops_signature_required.py"
+  ]
+}

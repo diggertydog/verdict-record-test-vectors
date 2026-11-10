@@ -1,0 +1,38 @@
+{
+  "name": "g04-evidence-only-body-input",
+  "section": "draft-wright-verdict-record-02 lines 425-427, 476-482",
+  "duties": [
+    "D33",
+    "D41"
+  ],
+  "description": "The same record under a policy that reads inputs from evidence only: an input read from body makes step 3 NOT RUN.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJmM2NlMzdiYjZhMjNkMjEyNDJkZmIzZTZjMzAzZDhhNzE3YTkxYzBhYWNhMGQxZWM1YmU0YjZlNTZiMDY0YTUxIn1dLCJrZXkiOiJrLTAwMDIiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "8b4e790b24276cca1e6f94bbc630716a82f23420328d624fb9dfa7b9a41cb605",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2,
+    "inputs_from_evidence_only": true
+  },
+  "policy_sha256": "55f150ff8bfeadb1ff59203273050ab89b5dfd9782660b63ec75fe2f95c46d22",
+  "expected": {
+    "state": "held",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "NOT RUN"
+    }
+  }
+}

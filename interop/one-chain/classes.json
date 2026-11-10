@@ -1,0 +1,5 @@
+{
+ "note": "A class for each record whose state or steps differ from what the case states. Classes: our defect, his case, -02 silent or ambiguous. Written by hand after reading the raw output; run.py copies it into table.md.",
+ "negatives/N13-a2-altered-after-the-verdict-cited-it/verdict-record.json": {"class": "his case", "why": "what.txt says A2 was altered after the verdict cited it and the checker holds no item with the cited digest; the directory publishes A2 with the cited digest (observed succeeded), unaltered. Withholding that item, as what.txt states, gives the stated result (results.json, supplementary)."},
+ "negatives/N13-a2-altered-after-the-verdict-cited-it/verdict-record-other-result.json": {"class": "his case", "why": "as above: on the bytes published the re-run gives executed_as_approved and the record states not_as_approved, so step 3 FAILs; with the cited A2 withheld, the stated held is reproduced."}
+}

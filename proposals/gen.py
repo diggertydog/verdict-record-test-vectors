@@ -127,7 +127,7 @@ P("p05-evidence-age",
   "Should a checker's policy be able to set a maximum age for cited evidence, measured between the record's upper time bound and each item's, never by the checker's clock?",
   "An outer record cites a record whose upper time bound is two years earlier than its own.",
   outer5, "released", P3,
-  "With the base policy: same state. With a policy member such as max_evidence_age (not defined in -02, so a -02 checker reads that policy as invalid and gives no verdict), step 2 would be NOT RUN for an item older than the limit, and the state held. Two checkers holding the same inputs still give the same result, because no clock is read.",
+  "With the base policy: same state. With a policy member such as max_evidence_age (not defined in -02, so a -02 checker reads past it and gives the same state as under the base policy), step 2 would be NOT RUN for an item older than the limit, and the state held. Two checkers holding the same inputs still give the same result, because no clock is read.",
   items=(inner5, ITEM1), item_bounds={H(inner5): "2024-11-01T11:00:00.000000Z"},
   rests_on="Sections 4.1 (no step reads the checker's clock), 4.5")
 

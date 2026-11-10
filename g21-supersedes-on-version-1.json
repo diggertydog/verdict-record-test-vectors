@@ -1,0 +1,33 @@
+{
+  "name": "g21-supersedes-on-version-1",
+  "section": "draft-wright-verdict-record-02 lines 253-254",
+  "duties": [
+    "D11"
+  ],
+  "description": "version 1 with a digest in supersedes: refused before any step.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIG1lYXN1cmVkIHZhbHVlIGlzIGF0IGxlYXN0IHRoZSB0aHJlc2hvbGQuIn0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJmM2NlMzdiYjZhMjNkMjEyNDJkZmIzZTZjMzAzZDhhNzE3YTkxYzBhYWNhMGQxZWM1YmU0YjZlNTZiMDY0YTUxIn1dLCJrZXkiOiJrLTAwMDIiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6IjgwYjc4MWI0YWUwYTgxZDUzZGZkYzM5NjIyNDFjMjQyNmQ0OTBjYTVhYWQ1NWI1YTlmMmVmYTc3NGEwM2Y2MmEiLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "054d1037e083f0baf7f43c7962ee201b4c266567b479f10179ad192f4eb6a487",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "refused",
+    "steps": null,
+    "no_step_runs": true
+  }
+}

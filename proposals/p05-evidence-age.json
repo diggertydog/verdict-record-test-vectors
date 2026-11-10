@@ -38,6 +38,6 @@
     },
     "rests_on": "Sections 4.1 (no step reads the checker's clock), 4.5"
   },
-  "proposed": "With the base policy: same state. With a policy member such as max_evidence_age (not defined in -02, so a -02 checker reads that policy as invalid and gives no verdict), step 2 would be NOT RUN for an item older than the limit, and the state held. Two checkers holding the same inputs still give the same result, because no clock is read.",
+  "proposed": "With the base policy: same state. With a policy member such as max_evidence_age (not defined in -02, so a -02 checker reads past it and gives the same state as under the base policy), step 2 would be NOT RUN for an item older than the limit, and the state held. Two checkers holding the same inputs still give the same result, because no clock is read.",
   "status": "PROPOSAL: not draft text. For discussion at IETF 127."
 }
