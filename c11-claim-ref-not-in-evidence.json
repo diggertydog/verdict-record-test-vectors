@@ -1,7 +1,7 @@
 {
   "name": "c11-claim-ref-not-in-evidence",
-  "section": "2.3",
-  "description": "body.claim.ref names an item that evidence does not list.",
+  "section": "-03 2.1, 2.3",
+  "description": "body.claim.ref names an item that evidence does not list: the record breaks Section 2.3 and is refused before any step, the refusal named by Section 2.3. Under -02 the reference checker refused it at step 2 (I-2); -03 settles it.",
   "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJyZWYiOnsiZm9ybWF0IjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6Zm9ybWF0Om9wYXF1ZSIsInNoYTI1NiI6ImEzNWJlZjUwODM0Y2JlYjE5OTUyOGY4NDgwZmM3N2Q0MWYyY2FmOTA1OWY3NDcwOGNjOWVkYjM1Yzk5NjRlODIifX0sIm1lYXN1cmVkIjo3LCJ0aHJlc2hvbGQiOjV9LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjoidGhyZXNob2xkIiwidmFsdWUiOiJtZWFzdXJlZCJ9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJlM2JmM2EzZmNkNWI5NWU3OGNmMTMwM2Y5ZWUzMDFkOTcwMzIyNzFkZDIxOGYwMzhlMWEyYzgyNjViZDFkNTZkIn1dLCJrZXkiOiJrLTAwMDEiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
   "record_sha256": "6954663665c1594e7268072c24c056b12341ab48f972799bad6b403722a8c035",
   "evidence_items": [
@@ -19,12 +19,14 @@
       "urn:example:verdict-record:format:never-verifies",
       "verdict-record/1"
     ],
-    "max_depth": 2
+    "citation_depth": 2
   },
-  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
   "expected": {
     "state": "refused",
-    "steps": null
+    "steps": null,
+    "no_step_runs": true,
+    "named": "Section 2.3"
   },
-  "depends_on_interpretation": "I-2"
+  "decided_by": "A record whose ref does not appear in evidence, including a record with no evidence array, breaks this section and is refused before any step runs"
 }

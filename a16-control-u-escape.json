@@ -1,0 +1,32 @@
+{
+  "name": "a16-control-u-escape",
+  "section": "draft-wright-verdict-record-03 Section 2.1",
+  "description": "The same U+000A written as \\u000a: not canonical, refused before any step, named by Section 2.1.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoibGluZSBvbmVcdTAwMGFUaGUgdmFsdWUgbiBvZiB0aGUgY2l0ZWQgaXRlbSBpcyBhdCBsZWFzdCBpdHMgdmFsdWUgbS4ifX0sImNoZWNrIjp7ImlucHV0cyI6eyJtaW4iOnsiZXZpZGVuY2UiOjAsInBvaW50ZXIiOiIvbSJ9LCJ2YWx1ZSI6eyJldmlkZW5jZSI6MCwicG9pbnRlciI6Ii9uIn19LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6YXQtbGVhc3QifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJmM2NlMzdiYjZhMjNkMjEyNDJkZmIzZTZjMzAzZDhhNzE3YTkxYzBhYWNhMGQxZWM1YmU0YjZlNTZiMDY0YTUxIn1dLCJrZXkiOiJrLTAwMDMiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "5b139248d3574500c6e941c50e387ffd709939e8089aeee5d9602da6c48c3c92",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "citation_depth": 2
+  },
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
+  "expected": {
+    "state": "refused",
+    "steps": null,
+    "no_step_runs": true,
+    "named": "Section 2.1"
+  },
+  "decided_by": "each written as \\b, \\t, \\n, \\f or \\r where one of those applies and otherwise as \\u followed by four lowercase hex digits"
+}

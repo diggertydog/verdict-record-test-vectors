@@ -18,15 +18,17 @@
       "urn:example:verdict-record:format:never-verifies",
       "verdict-record/1"
     ],
-    "max_depth": 2
+    "citation_depth": 2
   },
-  "policy_sha256": "483a3b16b9e7b4af6f6a206dc44ce81000d6d238ff206498a828e750e7ae9887",
+  "policy_sha256": "82a7cbb0c01da47b48e9c47cff67c67e922a2bfc082dfdbc752c29932abe9f9e",
   "expected": {
     "state": "held",
     "steps": {
       "1": "PASS",
       "2": "NOT RUN",
       "3": "PASS"
-    }
-  }
+    },
+    "named": "NOT RUN at step 2"
+  },
+  "decided_by": "An integer of 0 or more: the depth of citation the checker follows"
 }

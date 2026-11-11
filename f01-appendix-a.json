@@ -1,12 +1,15 @@
 {
   "name": "f01-appendix-a",
-  "section": "Appendix A",
-  "description": "The draft's own example. Its digest is 2a85c94e...; the second evidence item's bytes are not published, so an outside checker holds only the claim record.",
-  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTAtMjNUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoiY2hlY2tlci03IiwibW9kZWwiOiJleGFtcGxlLW1vZGVsIiwibW9kZWxfdmVyc2lvbiI6IjEiLCJ0eXBlIjoic3lzdGVtIn0sImJvZHkiOnsiY2xhaW0iOnsicmVmIjp7ImZvcm1hdCI6ImFwcGxpY2F0aW9uL2pzb24iLCJzaGEyNTYiOiJmNDc0N2YxZmExYWQ2M2VhYWQ5MGU0MWI1ODc3OTRmOGY1YzgyZjkyMTViOWE4ZTIzYTZjMjA0ZWRhYmM3ZDQ4In19fSwiY2hlY2siOnsicmVzdWx0Ijoic3VwcG9ydGVkIiwicnVsZSI6Imp1ZGdlbWVudCJ9LCJldmlkZW5jZSI6W3siZm9ybWF0IjoiYXBwbGljYXRpb24vanNvbiIsInNoYTI1NiI6ImY0NzQ3ZjFmYTFhZDYzZWFhZDkwZTQxYjU4Nzc5NGY4ZjVjODJmOTIxNWI5YThlMjNhNmMyMDRlZGFiYzdkNDgifSx7ImZvcm1hdCI6Imh0dHBzOi8vZGF0YXRyYWNrZXIuaWV0Zi5vcmcvZG9jL2RyYWZ0LWdydXN6a2Etc2lnbmVkLWV2YWx1YXRpb24tcmVjZWlwdHMvIiwic2hhMjU2IjoiMGM5NjRmNDVjNDUwYTAyNTNmYzA5ZWIyMzE2ZTZhZDI3MTk0NGJlMjAxYzQ2ZWJmMmM1ZDQwZTUyOWYzNTMwNiJ9XSwia2V5IjoidmVyZGljdC0wMDAxIiwia2luZCI6Im1vZGVsLWRlY2lzaW9uIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJ2ZXJpZmllci5leGFtcGxlIn0=",
-  "record_sha256": "2a85c94e39c56f50185b3b69b8f56026946364631799774a83b4f93399841c45",
+  "section": "Appendix A.1",
+  "description": "The draft's first example (-03), digest f377a145...: a model decision citing a claim record and the receipt of vector P1 of draft-gruszka-signed-evaluation-receipts-04, both printed in the draft. The checker holds both items; the policy lists neither format, so step 2 is NOT RUN.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTAtMjNUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoiY2hlY2tlci03IiwibW9kZWwiOiJleGFtcGxlLW1vZGVsIiwibW9kZWxfdmVyc2lvbiI6IjEiLCJ0eXBlIjoic3lzdGVtIn0sImJvZHkiOnsiY2xhaW0iOnsicmVmIjp7ImZvcm1hdCI6ImFwcGxpY2F0aW9uL2pzb24iLCJzaGEyNTYiOiJmNDc0N2YxZmExYWQ2M2VhYWQ5MGU0MWI1ODc3OTRmOGY1YzgyZjkyMTViOWE4ZTIzYTZjMjA0ZWRhYmM3ZDQ4In19fSwiY2hlY2siOnsicmVzdWx0Ijoic3VwcG9ydGVkIiwicnVsZSI6Imp1ZGdlbWVudCJ9LCJldmlkZW5jZSI6W3siZm9ybWF0IjoiYXBwbGljYXRpb24vanNvbiIsInNoYTI1NiI6ImY0NzQ3ZjFmYTFhZDYzZWFhZDkwZTQxYjU4Nzc5NGY4ZjVjODJmOTIxNWI5YThlMjNhNmMyMDRlZGFiYzdkNDgifSx7ImZvcm1hdCI6Imh0dHBzOi8vZGF0YXRyYWNrZXIuaWV0Zi5vcmcvZG9jL2RyYWZ0LWdydXN6a2Etc2lnbmVkLWV2YWx1YXRpb24tcmVjZWlwdHMvIiwic2hhMjU2IjoiMDIwMzZkMWY1NzUwOTg1ODMzMDM4Mzc1NWVjMTZjNTMyYmRjNThiMGYyZDk0OTQ2NDQ4OGQ1N2FiYzlmOTVlNyJ9XSwia2V5IjoidmVyZGljdC0wMDAxIiwia2luZCI6Im1vZGVsLWRlY2lzaW9uIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJ2ZXJpZmllci5leGFtcGxlIn0=",
+  "record_sha256": "f377a1452680e5b3bc46610dc9a1bbcaba2bed9a5714ba683e97c55b35044e44",
   "evidence_items": [
     {
       "b64": "eyJtYWRlX2J5IjoiYnVpbGRlci5leGFtcGxlIiwic3RhdGVtZW50IjoiUmVsZWFzZSAyLjEgb2YgZXhhbXBsZS1zZXJ2aWNlIHBhc3NlZCBpdHMgYWNjZXB0YW5jZSBzdWl0ZS4ifQ=="
+    },
+    {
+      "b64": "eyJwYXlsb2FkX2I2NCI6ImV5SmpiMjF0YVhSZllXeG5Jam9pYzJoaE1qVTJMWE5oYkhSbFpDMTJNU0lzSW1OdmJYQmhjbUYwYjNJaU9pSStQU0lzSW1SaGRHRnpaWFJmYVdSZlkyOXRiV2wwSWpvaWMyaGhNalUyT21FeU1XSmhOR1E1Tm1NNE1ETmtOREkyTTJSa00yUXlNVFl4WW1Nd016bGhNekJtTkRRMk1tSmtOVGswTnpCbE16RmlZVFZoT1dGaU1HRTVZak5pTmpNaUxDSnRaWFJ5YVdNaU9pSmhZMk4xY21GamVTSXNJbTF2WkdWc1gybGtYMk52YlcxcGRDSTZJbk5vWVRJMU5qbzVNRFJrWlRReU5UWXlaamxoTVRrMk5URmxNVGxsWWpkaFlqRTJOV1UwWm1abE1URTBZMlUxWVRKbU9UaGxOVGRrWVRVNE16ZzVOVGsyT0RSbVlqQm1JaXdpYmlJNk1UZ3dNQ3dpY0dGemMyVmtJanAwY25WbExDSnpZMmhsYldFaU9pSm9kSFJ3Y3pvdkwzTnBaMjVsWkMxbGRtbGtaVzVqWlM1dmNtY3ZaWFpoYkMxeVpXTmxhWEIwTDNZeElpd2ljMk52Y21VaU9pSXdMamd6TkNJc0luTjFhWFJsSWpvaVlXTnRaUzF6WVdabGRIa3RjM1ZwZEdVaUxDSnpkV2wwWlY5MlpYSnphVzl1SWpvaU1TNHlMakFpTENKMGFISmxjMmh2YkdRaU9pSXdMamd3TUNJc0luUnBiV1Z6ZEdGdGNDSTZJakl3TWpZdE1UQXRNREpVTURBNk1EQTZNREJhSW4wPSIsInNjaGVtYSI6ImFwcGxpY2F0aW9uL3ZuZC5zaWduZWQtZXZpZGVuY2UuZXZhbC1yZWNlaXB0K2pzb24iLCJzaWduYXR1cmUiOnsiYWxnIjoiZWQyNTUxOSIsImtleSI6Ing3cHBBOTlEdHVtSE8vQXUwTS9ndW1TSzhJd0N6TndQaUlEOTJCU0ZiYWs9Iiwic2lnIjoiQ0JHdE4yNjlGT2hQU3I1eGUwemxKR1NCTkJ6R2luRXo4aTAxZk02MStKTmFKUGRuWnkxSGJvWWk0ZW1obThLWnFQVTN5c1Rtcm1DRXhTdlN4b2N6QkE9PSJ9fQ=="
     }
   ],
   "upper_time_bound": "2026-11-01T12:00:00.000000Z",
@@ -15,16 +18,18 @@
       "model-decision"
     ],
     "formats": [],
-    "max_depth": 2
+    "citation_depth": 2
   },
-  "policy_sha256": "d1c897d91d1f308364cf0bbb9aa45062e83939b36a7bf6a1236b794f75d85624",
+  "policy_sha256": "3d33c171c4773afbac8ead8a834b69beb7dc39cebf1eff401d1c6e4617b57023",
   "expected": {
     "state": "held",
     "steps": {
       "1": "PASS",
       "2": "NOT RUN",
       "3": "PASS"
-    }
+    },
+    "named": "NOT RUN at step 2"
   },
-  "depends_on_interpretation": "I-4"
+  "depends_on_interpretation": "I-4",
+  "decided_by": "The second evidence item is a Signed Evaluation Receipt"
 }

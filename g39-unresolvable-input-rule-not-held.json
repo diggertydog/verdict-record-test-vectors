@@ -1,0 +1,35 @@
+{
+  "name": "g39-unresolvable-input-rule-not-held",
+  "section": "draft-wright-verdict-record-03 Section 4.3",
+  "description": "A rule the checker does not hold, with an input bound to an evidence entry that does not exist: inputs are resolved whether or not the rule is held, and the unresolvable input FAILs step 3.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIHZhbHVlIG4gb2YgdGhlIGNpdGVkIGl0ZW0gaXMgYXQgbGVhc3QgaXRzIHZhbHVlIG0uIn19LCJjaGVjayI6eyJpbnB1dHMiOnsieCI6eyJldmlkZW5jZSI6NX19LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6bm90LWhlbGQifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJmM2NlMzdiYjZhMjNkMjEyNDJkZmIzZTZjMzAzZDhhNzE3YTkxYzBhYWNhMGQxZWM1YmU0YjZlNTZiMDY0YTUxIn1dLCJrZXkiOiJrLTAwMDMiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "db894a1c3ffedcfe5f74ccb89dc19cd8edd21bc88138646e2929474655c3a74a",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "citation_depth": 2
+  },
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
+  "expected": {
+    "state": "refused",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "FAIL"
+    },
+    "named": "FAIL at step 3"
+  },
+  "decided_by": "whether or not it holds the rule's specification"
+}

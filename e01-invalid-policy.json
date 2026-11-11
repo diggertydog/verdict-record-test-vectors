@@ -17,12 +17,14 @@
     "formats": [
       "urn:example:verdict-record:format:opaque"
     ],
-    "max_depth": -1
+    "citation_depth": -1
   },
-  "policy_sha256": "724987bd1270545cbeb3784b2387e6e6dd25daeccfded50115669de2e0dbfce3",
+  "policy_sha256": "d9c20f3d615f6658d22e388b041ee54c187ae3586145c31d26e09eb9626269ab",
   "expected": {
     "state": "no verdict",
-    "steps": null
+    "steps": null,
+    "named": null
   },
-  "depends_on_interpretation": "I-8"
+  "depends_on_interpretation": "I-8",
+  "decided_by": "An integer of 0 or more: the depth of citation the checker follows"
 }

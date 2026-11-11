@@ -19,7 +19,7 @@ VR = "verdict-record/1"
 AT_LEAST = "urn:example:verdict-record:rule:at-least"
 EQUALS = "urn:example:verdict-record:rule:equals"
 UB = "2026-11-01T12:00:00.000000Z"
-POLICY = {"judgement_kinds": ["model-decision"], "formats": [OPAQUE, NEVER, VR], "max_depth": 2}
+POLICY = {"judgement_kinds": ["model-decision"], "formats": [OPAQUE, NEVER, VR], "citation_depth": 2}  # -03 4.5
 EO = dict(POLICY, inputs_from_evidence_only=True)
 
 JITEM = b'{"m":5,"n":7,"s":"seven"}'          # a JSON evidence item, not canonical-relevant
@@ -57,7 +57,8 @@ def inputs(**kw):
 
 vectors = []
 def V(name, lines, duties, desc, record, state, steps=None, items=(JITEM,), policy=POLICY, interp=None,
-      hold=None, body_inputs_read=None, not_relied_on=None, raw=None, no_step_runs=False):
+      hold=None, body_inputs_read=None, not_relied_on=None, raw=None, no_step_runs=False,
+      policy_members_not_used=None):
     rb = raw if raw is not None else C(record)
     v = {"name": name, "section": "draft-wright-verdict-record-02 lines " + lines, "duties": duties,
          "description": desc, "record_b64": B(rb), "record_sha256": H(rb),
@@ -66,6 +67,7 @@ def V(name, lines, duties, desc, record, state, steps=None, items=(JITEM,), poli
     if body_inputs_read is not None: v["expected"]["body_inputs_read"] = body_inputs_read
     if not_relied_on is not None: v["expected"]["not_relied_on"] = not_relied_on
     if no_step_runs: v["expected"]["no_step_runs"] = True
+    if policy_members_not_used is not None: v["expected"]["policy_members_not_used"] = policy_members_not_used
     if interp: v["depends_on_interpretation"] = interp
     if hold: v["hold"] = hold
     vectors.append(v)
@@ -120,17 +122,20 @@ V("g13-bound-input-wrong-type", "422-423", ["D31"],
 V("g14-policy-evidence-only-not-boolean", "470-474", ["D41", "D42"],
   "The evidence-only statement written as a string: the policy is invalid and the checker gives no verdict.",
   rec(), "no verdict", None, policy=dict(POLICY, inputs_from_evidence_only="yes"), interp="O-2")
-V("g15-policy-unknown-member", "467-474", ["D42"],
-  "A policy with a member the checker does not know: lines 472-474 name no such ground for invalidity, so the member "
-  "is read past and the policy runs without it; the record is released as under the base policy.",
-  rec(), "released", P3, policy=dict(POLICY, max_evidence_age_seconds=3600), interp="O-2")
-V("g16-policy-citation-depth", "467-469", ["D41"],
-  "The depth stated as citation_depth, the name a second checker chose: read as the depth.",
+V("g15-policy-unknown-member", "467-474 (-03 4.5)", ["D42"],
+  "A policy with a member -03 does not define: the policy is not invalid, the member is not applied and the report "
+  "names it as not used; the record is released as under the base policy.",
+  rec(), "released", P3, policy=dict(POLICY, max_evidence_age_seconds=3600),
+  policy_members_not_used=["max_evidence_age_seconds"])
+V("g16-policy-citation-depth", "467-469 (-03 4.5)", ["D41"],
+  "The depth stated as citation_depth, the name -03 gives it, with depth 0 and one format: released.",
   rec(), "released", P3, policy={"judgement_kinds": ["model-decision"], "formats": [OPAQUE], "citation_depth": 0},
-  interp="O-1")
-V("g17-policy-two-depths", "467-474", ["D42"],
-  "The depth stated twice, under both names: invalid, no verdict.",
-  rec(), "no verdict", None, policy=dict(POLICY, citation_depth=2), interp="O-1")
+  policy_members_not_used=[])
+V("g17-policy-two-depths", "467-474 (-03 4.5)", ["D42"],
+  "The depth stated under both names: under -03 max_depth is a member the document does not define, so it is not "
+  "applied and is named as not used; the policy is valid and the record is released. Under -02 the reference checker "
+  "gave no verdict: an expected answer -03 changes.",
+  rec(), "released", P3, policy=dict(POLICY, max_depth=2), policy_members_not_used=["max_depth"])
 V("g18-step2-names-every-entry", "397-404", ["D24", "D25"],
   "Two entries step 2 cannot rely on, for two reasons: step 2 is NOT RUN and names both.",
   body_rec(evidence=[ent(NV, NEVER), ent(OTHER)]), "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"},
@@ -191,7 +196,7 @@ def a2(child_bytes):
 assert H(PARENT) == "1336337e88adc67853b80b4998363210dc5c0797cc7b7c722128cecc56a38c14"
 assert H(CHILD) == "8886795d4403b5cd8820eb813ee0724f1d6d5d383124364b09cdc5020639e00c"
 assert H(C(a2(CHILD))) == "62017940a8ddddd5ddd7ff46c8ff2a6ce79dfcccb775d767b8dff8db0ebe19ed"
-APOL = {"judgement_kinds": [], "formats": [DURGA], "max_depth": 0, "inputs_from_evidence_only": True}
+APOL = {"judgement_kinds": [], "formats": [DURGA], "citation_depth": 0, "inputs_from_evidence_only": True}
 RULE = ["appendix_a2_rule.py"]
 V("h01-a2-hops-without-signature-released", "1187-1190", ["D14", "D15", "D16", "D33", "A.2"],
   "Appendix A.2's record, both hops held, under hop format rules that need no signature: released.",

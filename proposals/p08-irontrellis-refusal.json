@@ -25,9 +25,9 @@
       "https://github.com/zerohourzulu/irontrellis/tree/a2c487f6cd3afee2e35c7f7f1b64c9d966bf8387/conformance/v2-g3#vectors",
       "https://github.com/zerohourzulu/irontrellis/tree/a2c487f6cd3afee2e35c7f7f1b64c9d966bf8387/conformance/v2-g3#histories"
     ],
-    "max_depth": 0
+    "citation_depth": 0
   },
-  "policy_sha256": "8ee3814ccf206eb87e2c5d1bd9d21d65d16d362867248c287fc11ff40ddf2e8c",
+  "policy_sha256": "e238e4cf2d6e36d6ea866075b24d88c0401beac6d22966c0ef0ef71571207745",
   "expected_under_02": {
     "state": "held",
     "steps": {

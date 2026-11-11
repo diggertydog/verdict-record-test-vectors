@@ -1,0 +1,31 @@
+{
+  "name": "g31-policy-max-depth-only",
+  "section": "draft-wright-verdict-record-03 Section 4.5",
+  "description": "The depth stated only as max_depth, the name the -02 vectors used: the policy lacks citation_depth and is invalid; no verdict. (max_depth is a member -03 does not define.)",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIHZhbHVlIG4gb2YgdGhlIGNpdGVkIGl0ZW0gaXMgYXQgbGVhc3QgaXRzIHZhbHVlIG0uIn19LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjp7ImV2aWRlbmNlIjowLCJwb2ludGVyIjoiL20ifSwidmFsdWUiOnsiZXZpZGVuY2UiOjAsInBvaW50ZXIiOiIvbiJ9fSwicmVzdWx0IjoicGFzcyIsInJ1bGUiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpydWxlOmF0LWxlYXN0In0sImV2aWRlbmNlIjpbeyJmb3JtYXQiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpmb3JtYXQ6b3BhcXVlIiwic2hhMjU2IjoiZjNjZTM3YmI2YTIzZDIxMjQyZGZiM2U2YzMwM2Q4YTcxN2E5MWMwYWFjYTBkMWVjNWJlNGI2ZTU2YjA2NGE1MSJ9XSwia2V5Ijoiay0wMDAzIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+  "record_sha256": "a0fbde2f5314a023ed0f202535630e1af0e3bbcffccf422fd596dac5a8b9b1cf",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "80267d6ab05515d7b4270d376b60cd574857e074dc8260591b70f5e2764b02cc",
+  "expected": {
+    "state": "no verdict",
+    "steps": null,
+    "named": null
+  },
+  "decided_by": "A policy that is not a JSON object, that lacks one of the first three members, or that states any of these four members in a form other than these, is invalid"
+}

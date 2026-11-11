@@ -1,0 +1,32 @@
+{
+  "name": "a17-leap-second",
+  "section": "draft-wright-verdict-record-03 Section 2.1",
+  "description": "act_time names second 60: not a time, refused before any step, named by Section 2.1.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTItMzFUMjM6NTk6NjAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIHZhbHVlIG4gb2YgdGhlIGNpdGVkIGl0ZW0gaXMgYXQgbGVhc3QgaXRzIHZhbHVlIG0uIn19LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjp7ImV2aWRlbmNlIjowLCJwb2ludGVyIjoiL20ifSwidmFsdWUiOnsiZXZpZGVuY2UiOjAsInBvaW50ZXIiOiIvbiJ9fSwicmVzdWx0IjoicGFzcyIsInJ1bGUiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpydWxlOmF0LWxlYXN0In0sImV2aWRlbmNlIjpbeyJmb3JtYXQiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpmb3JtYXQ6b3BhcXVlIiwic2hhMjU2IjoiZjNjZTM3YmI2YTIzZDIxMjQyZGZiM2U2YzMwM2Q4YTcxN2E5MWMwYWFjYTBkMWVjNWJlNGI2ZTU2YjA2NGE1MSJ9XSwia2V5Ijoiay0wMDAzIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+  "record_sha256": "8a5d6bed0a1fb18f041e91a17aab9c5063583fa58bae0e9696a4d49bde70f2e5",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "citation_depth": 2
+  },
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
+  "expected": {
+    "state": "refused",
+    "steps": null,
+    "no_step_runs": true,
+    "named": "Section 2.1"
+  },
+  "decided_by": "names a day that exists in the Gregorian calendar and a second from 00 to 59"
+}

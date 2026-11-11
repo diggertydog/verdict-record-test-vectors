@@ -1,10 +1,10 @@
 {
   "name": "g17-policy-two-depths",
-  "section": "draft-wright-verdict-record-02 lines 467-474",
+  "section": "draft-wright-verdict-record-02 lines 467-474 (-03 4.5)",
   "duties": [
     "D42"
   ],
-  "description": "The depth stated twice, under both names: invalid, no verdict.",
+  "description": "The depth stated under both names: under -03 max_depth is a member the document does not define, so it is not applied and is named as not used; the policy is valid and the record is released. Under -02 the reference checker gave no verdict: an expected answer -03 changes.",
   "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIHZhbHVlIG4gb2YgdGhlIGNpdGVkIGl0ZW0gaXMgYXQgbGVhc3QgaXRzIHZhbHVlIG0uIn19LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjp7ImV2aWRlbmNlIjowLCJwb2ludGVyIjoiL20ifSwidmFsdWUiOnsiZXZpZGVuY2UiOjAsInBvaW50ZXIiOiIvbiJ9fSwicmVzdWx0IjoicGFzcyIsInJ1bGUiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpydWxlOmF0LWxlYXN0In0sImV2aWRlbmNlIjpbeyJmb3JtYXQiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpmb3JtYXQ6b3BhcXVlIiwic2hhMjU2IjoiZjNjZTM3YmI2YTIzZDIxMjQyZGZiM2U2YzMwM2Q4YTcxN2E5MWMwYWFjYTBkMWVjNWJlNGI2ZTU2YjA2NGE1MSJ9XSwia2V5Ijoiay0wMDAyIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
   "record_sha256": "62e2dc0263ed14b51495d0abe76b430209d3231018e2622d68226e6f6af948d8",
   "evidence_items": [
@@ -22,13 +22,21 @@
       "urn:example:verdict-record:format:never-verifies",
       "verdict-record/1"
     ],
-    "max_depth": 2,
-    "citation_depth": 2
+    "citation_depth": 2,
+    "max_depth": 2
   },
   "policy_sha256": "2145e8bec53bd432b54b3ff53806ddbe4e3aa1d311cb42a94691f258e5e9d4d4",
   "expected": {
-    "state": "no verdict",
-    "steps": null
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    },
+    "policy_members_not_used": [
+      "max_depth"
+    ],
+    "named": "PASS"
   },
-  "depends_on_interpretation": "O-1"
+  "decided_by": "A policy member that this document does not define does not make the policy invalid."
 }

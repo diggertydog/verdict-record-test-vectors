@@ -1,0 +1,35 @@
+{
+  "name": "g32-kind-empty",
+  "section": "draft-wright-verdict-record-03 Section 2.2",
+  "description": "kind is the empty string: any string is read as a kind; released.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIHZhbHVlIG4gb2YgdGhlIGNpdGVkIGl0ZW0gaXMgYXQgbGVhc3QgaXRzIHZhbHVlIG0uIn19LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjp7ImV2aWRlbmNlIjowLCJwb2ludGVyIjoiL20ifSwidmFsdWUiOnsiZXZpZGVuY2UiOjAsInBvaW50ZXIiOiIvbiJ9fSwicmVzdWx0IjoicGFzcyIsInJ1bGUiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpydWxlOmF0LWxlYXN0In0sImV2aWRlbmNlIjpbeyJmb3JtYXQiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpmb3JtYXQ6b3BhcXVlIiwic2hhMjU2IjoiZjNjZTM3YmI2YTIzZDIxMjQyZGZiM2U2YzMwM2Q4YTcxN2E5MWMwYWFjYTBkMWVjNWJlNGI2ZTU2YjA2NGE1MSJ9XSwia2V5Ijoiay0wMDAzIiwia2luZCI6IiIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+  "record_sha256": "7c93ba05e614edbb2d8e99542d03cf1eecfd541b62478a5d04ac48194c4032e9",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "citation_depth": 2
+  },
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
+  "expected": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    },
+    "named": "PASS"
+  },
+  "decided_by": "A checker reads any string as a kind, including one this document does not define"
+}

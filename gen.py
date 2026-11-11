@@ -1,4 +1,5 @@
-"""Generates the test vectors for draft-wright-verdict-record-01.
+"""Generates the test vectors for draft-wright-verdict-record (groups a-e written against -01; f01 holds the
+Appendix A.1 example of -03; policies use the member names of -03 Section 4.5).
 Each vector's expected outcome is written here by hand from the draft text, with the
 section it rests on, and is NOT computed by the reference checker."""
 import base64, hashlib, json, os
@@ -17,7 +18,7 @@ VR = "verdict-record/1"
 AT_LEAST = "urn:example:verdict-record:rule:at-least"
 UB = "2026-11-01T12:00:00.000000Z"
 
-POLICY = {"judgement_kinds": ["model-decision"], "formats": [OPAQUE, NEVER, VR], "max_depth": 2}
+POLICY = {"judgement_kinds": ["model-decision"], "formats": [OPAQUE, NEVER, VR], "citation_depth": 2}
 
 ITEM1 = b"evidence item one: an opaque test item"
 ITEM2 = b"evidence item two: an item that never verifies"
@@ -42,7 +43,7 @@ DEL = _Del()
 
 vectors = []
 def V(name, section, desc, record_bytes, expected_state, expected_steps=None, items=(ITEM1,),
-      policy=POLICY, ub=UB, interp=None, item_bounds=None):
+      policy=POLICY, ub=UB, interp=None, item_bounds=None, extra=None):
     its = []
     for b in items:
         e = {"b64": B(b)}
@@ -54,6 +55,7 @@ def V(name, section, desc, record_bytes, expected_state, expected_steps=None, it
          "policy_sha256": H(C(policy)),
          "expected": {"state": expected_state, "steps": expected_steps}}
     if interp: v["depends_on_interpretation"] = interp
+    if extra: v["expected"].update(extra)
     vectors.append(v)
 
 P3 = {"1": "PASS", "2": "PASS", "3": "PASS"}
@@ -97,22 +99,23 @@ V("c02-entry-extra-member", "2.2, 4.3 step 2", "An evidence entry with a third m
 V("c03-entry-uppercase-hex", "2.1, 4.3 step 2", "An entry whose sha256 is upper-case hex.", C(rec(evidence=[{"format": OPAQUE, "sha256": H(ITEM1).upper()}])), "refused", {"1": "PASS", "2": "FAIL", "3": "PASS"})
 V("c04-item-not-held", "4.3 step 2", "The checker does not hold the cited item.", base, "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"}, items=())
 V("c05-format-not-in-policy", "4.3 step 2, 4.5", "The item is held but its format is not one the policy lists.", base, "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"},
-  policy={"judgement_kinds": ["model-decision"], "formats": [NEVER, VR], "max_depth": 2})
+  policy={"judgement_kinds": ["model-decision"], "formats": [NEVER, VR], "citation_depth": 2})
 V("c06-item-does-not-verify", "4.3 step 2", "The item does not verify by its format.", C(rec(evidence=[ent(ITEM2, NEVER)])), "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"}, items=(ITEM2,))
 inner = C(rec(key="k-inner"))
 outer = C(rec(key="k-outer", evidence=[ent(inner, VR)]))
 IB_OK = {H(inner): "2026-11-01T11:00:00.000000Z"}
 V("c07-cites-released-record", "4.3 step 2", "Cites a verdict record that is itself released, with an earlier upper time bound.", outer, "released", P3, items=(inner, ITEM1), item_bounds=IB_OK)
-V("c08-beyond-depth", "4.3 step 2, 4.5", "Same, but the policy follows no citations (max_depth 0).", outer, "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"}, items=(inner, ITEM1), item_bounds=IB_OK,
-  policy={"judgement_kinds": ["model-decision"], "formats": [OPAQUE, NEVER, VR], "max_depth": 0}, interp="I-5")
+V("c08-beyond-depth", "4.3 step 2, 4.5", "Same, but the policy follows no citations (citation_depth 0).", outer, "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"}, items=(inner, ITEM1), item_bounds=IB_OK,
+  policy={"judgement_kinds": ["model-decision"], "formats": [OPAQUE, NEVER, VR], "citation_depth": 0}, interp="I-5")
 V("c09-cited-bound-later", "4.3 step 2", "The cited record's upper time bound is later than the citing record's.", outer, "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"}, items=(inner, ITEM1),
   item_bounds={H(inner): "2026-11-01T13:00:00.000000Z"})
 bad_inner = C(rec(key="k-bad", check={"rule": AT_LEAST, "inputs": {"value": "measured", "min": "threshold"}, "result": "fail"}))
 outer_bad = C(rec(key="k-outer2", evidence=[ent(bad_inner, VR)]))
 V("c10-cites-refused-record", "4.3 step 2", "Cites a verdict record that is itself refused: the item does not verify.", outer_bad, "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"}, items=(bad_inner, ITEM1),
   item_bounds={H(bad_inner): "2026-11-01T11:00:00.000000Z"}, interp="I-6")
-V("c11-claim-ref-not-in-evidence", "2.3", "body.claim.ref names an item that evidence does not list.",
-  C(rec(body={"claim": {"ref": ent(ITEM2)}, "measured": 7, "threshold": 5})), "refused", None, interp="I-2")
+V("c11-claim-ref-not-in-evidence", "-03 2.1, 2.3", "body.claim.ref names an item that evidence does not list: the record breaks Section 2.3 and is refused before any step, the refusal named by Section 2.3. Under -02 the reference checker refused it at step 2 (I-2); -03 settles it.",
+  C(rec(body={"claim": {"ref": ent(ITEM2)}, "measured": 7, "threshold": 5})), "refused", None,
+  extra={"no_step_runs": True})
 V("c12-empty-evidence", "4.3 step 2", "An empty evidence array: every entry (none) is held and verifies.", C(rec(evidence=[])), "released", P3, items=(), interp="I-3")
 
 # ---- Group D: step 3 ----
@@ -126,22 +129,18 @@ V("d05-rule-false-low", "4.3 step 3", "The rule re-runs to fail and the record s
   C(rec(body={"claim": {"text": "t"}, "measured": 3, "threshold": 5}, check={"rule": AT_LEAST, "inputs": {"value": "measured", "min": "threshold"}, "result": "fail"})), "released", P3)
 
 # ---- Group F: the draft's own Appendix A ----
-APPX_CLAIM = b'{"made_by":"builder.example","statement":"Release 2.1 of example-service passed its acceptance suite."}'
-APPX_REC = C({"act_time":"2026-10-23T10:00:00.000000Z","actor":{"id":"checker-7","model":"example-model","model_version":"1","type":"system"},
- "body":{"claim":{"ref":{"format":"application/json","sha256":H(APPX_CLAIM)}}},
- "check":{"result":"supported","rule":"judgement"},
- "evidence":[{"format":"application/json","sha256":H(APPX_CLAIM)},
-  {"format":"https://datatracker.ietf.org/doc/draft-gruszka-signed-evaluation-receipts/","sha256":"0c964f45c450a0253fc09eb2316e6ad271944be201c46ebf2c5d40e529f35306"}],
- "key":"verdict-0001","kind":"model-decision","supersedes":None,"v":"verdict-record/1","version":1,"writer":"verifier.example"})
-assert H(APPX_REC) == "2a85c94e39c56f50185b3b69b8f56026946364631799774a83b4f93399841c45"
-assert H(APPX_CLAIM) == "f4747f1fa1ad63eaad90e41b587794f8f5c82f9215b9a8e23a6c204edabc7d48"
-V("f01-appendix-a", "Appendix A", "The draft's own example. Its digest is 2a85c94e...; the second evidence item's bytes are not published, so an outside checker holds only the claim record.",
-  APPX_REC, "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"}, items=(APPX_CLAIM,),
-  policy={"judgement_kinds": ["model-decision"], "formats": [], "max_depth": 2}, interp="I-4")
+# The bytes come from appendix-objects.json, written by the draft's tools/appendix_gen.py from the same objects that
+# produce Appendix A of -03. No digest is copied: each is computed here from those bytes.
+APPX = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "appendix-objects.json"), encoding="utf-8"))
+A1_REC = base64.b64decode(APPX["A.1"]["record_b64"])
+A1_ITEMS = tuple(base64.b64decode(i["b64"]) for i in APPX["A.1"]["items"])
+V("f01-appendix-a", "Appendix A.1", "The draft's first example (-03), digest " + H(A1_REC)[:8] + "...: a model decision citing a claim record and the receipt of vector P1 of draft-gruszka-signed-evaluation-receipts-04, both printed in the draft. The checker holds both items; the policy lists neither format, so step 2 is NOT RUN.",
+  A1_REC, "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"}, items=A1_ITEMS,
+  policy={"judgement_kinds": ["model-decision"], "formats": [], "citation_depth": 2}, interp="I-4")
 
 # ---- Group E: policy ----
 V("e01-invalid-policy", "4.4, 4.5", "The checker's policy is invalid: no verdict.", base, "no verdict", None,
-  policy={"judgement_kinds": ["model-decision"], "formats": [OPAQUE], "max_depth": -1}, interp="I-8")
+  policy={"judgement_kinds": ["model-decision"], "formats": [OPAQUE], "citation_depth": -1}, interp="I-8")
 
 for v in vectors:
     with open(os.path.join(OUT, v["name"] + ".json"), "w", encoding="utf-8") as f:

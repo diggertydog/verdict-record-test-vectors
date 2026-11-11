@@ -1,0 +1,35 @@
+{
+  "name": "g38-rule-empty",
+  "section": "draft-wright-verdict-record-03 Section 2.2, 4.3",
+  "description": "check.rule is the empty string: step 1 FAILs (it names no rule) and step 3 is NOT RUN.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIHZhbHVlIG4gb2YgdGhlIGNpdGVkIGl0ZW0gaXMgYXQgbGVhc3QgaXRzIHZhbHVlIG0uIn19LCJjaGVjayI6eyJpbnB1dHMiOnt9LCJyZXN1bHQiOiJwYXNzIiwicnVsZSI6IiJ9LCJldmlkZW5jZSI6W3siZm9ybWF0IjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6Zm9ybWF0Om9wYXF1ZSIsInNoYTI1NiI6ImYzY2UzN2JiNmEyM2QyMTI0MmRmYjNlNmMzMDNkOGE3MTdhOTFjMGFhY2EwZDFlYzViZTRiNmU1NmIwNjRhNTEifV0sImtleSI6ImstMDAwMyIsImtpbmQiOiJjaGVjay1ydW4iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "5919cbaae87b15e84edd642fd1d93b26e431f6910090d4af44689a6ff9b0d728",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "citation_depth": 2
+  },
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
+  "expected": {
+    "state": "refused",
+    "steps": {
+      "1": "FAIL",
+      "2": "PASS",
+      "3": "NOT RUN"
+    },
+    "named": "FAIL at step 1"
+  },
+  "decided_by": "If check does not name a rule and give a result, step 3 is NOT RUN."
+}

@@ -1,6 +1,6 @@
 {
- "case_commit_read": "9e1c7a0b047129d71c5694995e0014eecdf2289c",
- "case_commit_brief": "9e1c7a0b047129d71c5694995e0014eecdf2289c",
+ "case_commit_read": "f0d766a1ca8422c64ad792fad7876db2737a7f72",
+ "case_commit_brief": "f0d766a1ca8422c64ad792fad7876db2737a7f72",
  "supplementary": [
   {
    "dir": "negatives/N13-a2-altered-after-the-verdict-cited-it",
@@ -2341,37 +2341,24 @@
     }
    },
    "ours": {
-    "state": "released",
+    "state": "held",
     "state_from_steps": null,
     "steps": {
      "1": "PASS",
-     "2": "PASS",
-     "3": "PASS"
+     "2": "NOT RUN",
+     "3": "NOT RUN"
     },
-    "reasons": {},
-    "re_run_result": "executed_as_approved",
+    "reasons": {
+     "2": "evidence[1]: no item held with this digest",
+     "3": "input attachment is bound to evidence[1], which the checker does not hold; input attempted_spec_digest is bound to evidence[1], which the checker does not hold"
+    },
+    "re_run_result": null,
     "container": "shows the record",
-    "rule_detail": {
-     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
-      "eight_dimensions": {
-       "specification_digests": "verified",
-       "specification_statements": "verified",
-       "record_statements": "verified",
-       "action_binding": "verified",
-       "stage_order": "verified",
-       "authorisation_recheck": "verified",
-       "observed_results": "verified",
-       "rationale_provenance": "verified"
-      },
-      "required": true,
-      "a": true,
-      "b": true,
-      "c": true,
-      "d": true
-     }
-    },
-    "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS",
-    "not_relied_on": []
+    "rule_detail": null,
+    "summary": "state held; step 1 PASS; step 2 NOT RUN; step 3 NOT RUN",
+    "not_relied_on": [
+     "evidence[1]: no item held with this digest"
+    ]
    },
    "container_published": true
   },
@@ -2419,39 +2406,24 @@
     }
    },
    "ours": {
-    "state": "refused",
+    "state": "held",
     "state_from_steps": null,
     "steps": {
      "1": "PASS",
-     "2": "PASS",
-     "3": "FAIL"
+     "2": "NOT RUN",
+     "3": "NOT RUN"
     },
     "reasons": {
-     "3": "the re-run gave \"executed_as_approved\", the record states \"not_as_approved\""
+     "2": "evidence[1]: no item held with this digest",
+     "3": "input attachment is bound to evidence[1], which the checker does not hold; input attempted_spec_digest is bound to evidence[1], which the checker does not hold"
     },
-    "re_run_result": "executed_as_approved",
+    "re_run_result": null,
     "container": null,
-    "rule_detail": {
-     "https://github.com/Laurent-Lemonnier/dps-scitt-decision-layer/tree/main/interop/verdict-record#executed-as-approved-v1": {
-      "eight_dimensions": {
-       "specification_digests": "verified",
-       "specification_statements": "verified",
-       "record_statements": "verified",
-       "action_binding": "verified",
-       "stage_order": "verified",
-       "authorisation_recheck": "verified",
-       "observed_results": "verified",
-       "rationale_provenance": "verified"
-      },
-      "required": true,
-      "a": true,
-      "b": true,
-      "c": true,
-      "d": true
-     }
-    },
-    "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
-    "not_relied_on": []
+    "rule_detail": null,
+    "summary": "state held; step 1 PASS; step 2 NOT RUN; step 3 NOT RUN",
+    "not_relied_on": [
+     "evidence[1]: no item held with this digest"
+    ]
    },
    "container_published": false
   },
@@ -3700,6 +3672,138 @@
     },
     "summary": "state refused; step 1 PASS; step 2 PASS; step 3 FAIL",
     "not_relied_on": []
+   },
+   "container_published": false
+  },
+  {
+   "dir": "negatives/N22-a2-issuer-seal-broken",
+   "record": "verdict-record.json",
+   "record_sha256": "a80b75b36ac7d734eb8e01c2e2cae8cc1ad9c34fe5e8698c2cbbf8403570b3d1",
+   "stated": {
+    "record_sha256": "a80b75b36ac7d734eb8e01c2e2cae8cc1ad9c34fe5e8698c2cbbf8403570b3d1",
+    "state": "held",
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    },
+    "re_run_result": null,
+    "why": {
+     "2": "Section 4.3 step 2: the item at entry 1 is not relied on (not met: the issuer's seal does not verify under the trust policy held)",
+     "3": "Section 4.3 step 3: attachment: bound to evidence[1], which step 2 does not rely on; attempted_spec_digest: bound to evidence[1], which step 2 does not rely on"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "1932d6c6e43e760218d9bfdc8b905e784d72a7fbf117302e59a92443f18996db",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "not met: the issuer's seal does not verify under the trust policy held"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "held",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    },
+    "reasons": {
+     "2": "evidence[1]: the format's rules are not met (the issuer's seal: failed)",
+     "3": "input attachment is bound to evidence[1], which step 2 does not rely on; input attempted_spec_digest is bound to evidence[1], which step 2 does not rely on"
+    },
+    "re_run_result": null,
+    "container": "shows the record",
+    "rule_detail": null,
+    "summary": "state held; step 1 PASS; step 2 NOT RUN; step 3 NOT RUN",
+    "not_relied_on": [
+     "evidence[1]: the format's rules are not met (the issuer's seal: failed)"
+    ]
+   },
+   "container_published": true
+  },
+  {
+   "dir": "negatives/N22-a2-issuer-seal-broken",
+   "record": "verdict-record-other-result.json",
+   "record_sha256": "6f5bd8c92f61dbd998cccb30583575f2413f59cb90c319b6cdb48f5419c58c46",
+   "stated": {
+    "record_sha256": "6f5bd8c92f61dbd998cccb30583575f2413f59cb90c319b6cdb48f5419c58c46",
+    "state": "held",
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    },
+    "re_run_result": null,
+    "why": {
+     "2": "Section 4.3 step 2: the item at entry 1 is not relied on (not met: the issuer's seal does not verify under the trust policy held)",
+     "3": "Section 4.3 step 3: attachment: bound to evidence[1], which step 2 does not rely on; attempted_spec_digest: bound to evidence[1], which step 2 does not rely on"
+    },
+    "items": [
+     {
+      "index": 0,
+      "sha256": "0c51d7ce4bc9a94aeb40d904464c65105639bde953fa3350602aa865685c2023",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "met"
+     },
+     {
+      "index": 1,
+      "sha256": "1932d6c6e43e760218d9bfdc8b905e784d72a7fbf117302e59a92443f18996db",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/extensions/action-binding",
+      "held": true,
+      "format_rules": "not met: the issuer's seal does not verify under the trust policy held"
+     },
+     {
+      "index": 2,
+      "sha256": "056a7135a4a71cd429177e2c4ad2a51d004fe45872a7cec76f290f92f2e61ace",
+      "format": "https://github.com/decision-provenance-standard/standard/tree/007f8c99ec910564bac1c508b76c8ce8391fa11e/standard/v5.0",
+      "held": true,
+      "format_rules": "met"
+     }
+    ],
+    "container": {
+     "shows_the_record": true
+    }
+   },
+   "ours": {
+    "state": "held",
+    "state_from_steps": null,
+    "steps": {
+     "1": "PASS",
+     "2": "NOT RUN",
+     "3": "NOT RUN"
+    },
+    "reasons": {
+     "2": "evidence[1]: the format's rules are not met (the issuer's seal: failed)",
+     "3": "input attachment is bound to evidence[1], which step 2 does not rely on; input attempted_spec_digest is bound to evidence[1], which step 2 does not rely on"
+    },
+    "re_run_result": null,
+    "container": null,
+    "rule_detail": null,
+    "summary": "state held; step 1 PASS; step 2 NOT RUN; step 3 NOT RUN",
+    "not_relied_on": [
+     "evidence[1]: the format's rules are not met (the issuer's seal: failed)"
+    ]
    },
    "container_published": false
   }

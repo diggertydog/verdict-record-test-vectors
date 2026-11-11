@@ -1,0 +1,32 @@
+{
+  "name": "g35-claim-missing",
+  "section": "draft-wright-verdict-record-03 Section 2.2, 2.3",
+  "description": "body has no claim: refused before any step, Section 2.3.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJub3RlIjoibm8gY2xhaW0ifSwiY2hlY2siOnsiaW5wdXRzIjp7Im1pbiI6eyJldmlkZW5jZSI6MCwicG9pbnRlciI6Ii9tIn0sInZhbHVlIjp7ImV2aWRlbmNlIjowLCJwb2ludGVyIjoiL24ifX0sInJlc3VsdCI6InBhc3MiLCJydWxlIjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6cnVsZTphdC1sZWFzdCJ9LCJldmlkZW5jZSI6W3siZm9ybWF0IjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6Zm9ybWF0Om9wYXF1ZSIsInNoYTI1NiI6ImYzY2UzN2JiNmEyM2QyMTI0MmRmYjNlNmMzMDNkOGE3MTdhOTFjMGFhY2EwZDFlYzViZTRiNmU1NmIwNjRhNTEifV0sImtleSI6ImstMDAwMyIsImtpbmQiOiJjaGVjay1ydW4iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "e4207d0f3e1d5631fb8460cc790ef23c539b44903af0bf117dd7a81bf3574e85",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "citation_depth": 2
+  },
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
+  "expected": {
+    "state": "refused",
+    "steps": null,
+    "no_step_runs": true,
+    "named": "Section 2.3"
+  },
+  "decided_by": "which MUST be present"
+}

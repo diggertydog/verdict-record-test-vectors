@@ -40,7 +40,25 @@ class Equals:
 
     @staticmethod
     def rerun(values, ctx):
-        return "equal" if values["a"] == values["b"] and type(values["a"]) is type(values["b"]) else "different"
+        # "equal as JSON values", as -03 Section 4.3 defines equality (numbers by mathematical value).
+        import decimal
+
+        def num(x):
+            return isinstance(x, (int, float, decimal.Decimal)) and not isinstance(x, bool)
+
+        def eq(a, b):
+            if num(a) and num(b):
+                return decimal.Decimal(str(a)) == decimal.Decimal(str(b))
+            if isinstance(a, bool) or isinstance(b, bool) or a is None or b is None:
+                return a is b
+            if isinstance(a, str) and isinstance(b, str):
+                return a == b
+            if isinstance(a, list) and isinstance(b, list):
+                return len(a) == len(b) and all(eq(x, y) for x, y in zip(a, b))
+            if isinstance(a, dict) and isinstance(b, dict):
+                return set(a) == set(b) and all(eq(a[k], b[k]) for k in a)
+            return False
+        return "equal" if eq(values["a"], values["b"]) else "different"
 
 
 class TestFormat:

@@ -1,10 +1,11 @@
 {
   "p01-model-declared": {
     "reference_checker": {
-      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-02",
-      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-03",
+      "policy_sha256": "8d5b558e3aee9d0c2eaeb5cbb55edfb17c6bbb321298aa19ce7a33a7b452366b",
       "trust_anchors_sha256": {},
       "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+      "policy_members_not_used": [],
       "state": "released",
       "steps": {
         "1": "PASS",
@@ -16,16 +17,18 @@
       "not_relied_on": [],
       "first_failed_step": null,
       "first_not_run_step": null,
+      "named_step": null,
       "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS"
     },
     "agrees_with_expected_under_02": true
   },
   "p02-model-attested": {
     "reference_checker": {
-      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-02",
-      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-03",
+      "policy_sha256": "8d5b558e3aee9d0c2eaeb5cbb55edfb17c6bbb321298aa19ce7a33a7b452366b",
       "trust_anchors_sha256": {},
       "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+      "policy_members_not_used": [],
       "state": "released",
       "steps": {
         "1": "PASS",
@@ -37,16 +40,18 @@
       "not_relied_on": [],
       "first_failed_step": null,
       "first_not_run_step": null,
+      "named_step": null,
       "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS"
     },
     "agrees_with_expected_under_02": true
   },
   "p03-model-proof-after-reply": {
     "reference_checker": {
-      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-02",
-      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-03",
+      "policy_sha256": "8d5b558e3aee9d0c2eaeb5cbb55edfb17c6bbb321298aa19ce7a33a7b452366b",
       "trust_anchors_sha256": {},
       "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+      "policy_members_not_used": [],
       "state": "held",
       "steps": {
         "1": "PASS",
@@ -62,16 +67,18 @@
       ],
       "first_failed_step": null,
       "first_not_run_step": "2",
+      "named_step": "2",
       "summary": "state held; step 1 PASS; step 2 NOT RUN; step 3 PASS"
     },
     "agrees_with_expected_under_02": true
   },
   "p04-cites-superseded-version": {
     "reference_checker": {
-      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-02",
-      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-03",
+      "policy_sha256": "8d5b558e3aee9d0c2eaeb5cbb55edfb17c6bbb321298aa19ce7a33a7b452366b",
       "trust_anchors_sha256": {},
       "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+      "policy_members_not_used": [],
       "state": "released",
       "steps": {
         "1": "PASS",
@@ -87,16 +94,18 @@
       "re_run_result": "pass",
       "first_failed_step": null,
       "first_not_run_step": null,
+      "named_step": null,
       "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS"
     },
     "agrees_with_expected_under_02": true
   },
   "p05-evidence-age": {
     "reference_checker": {
-      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-02",
-      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-03",
+      "policy_sha256": "8d5b558e3aee9d0c2eaeb5cbb55edfb17c6bbb321298aa19ce7a33a7b452366b",
       "trust_anchors_sha256": {},
       "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+      "policy_members_not_used": [],
       "state": "released",
       "steps": {
         "1": "PASS",
@@ -112,16 +121,18 @@
       "re_run_result": "pass",
       "first_failed_step": null,
       "first_not_run_step": null,
+      "named_step": null,
       "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS"
     },
     "agrees_with_expected_under_02": true
   },
   "p06-salted-commitment": {
     "reference_checker": {
-      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-02",
-      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-03",
+      "policy_sha256": "8d5b558e3aee9d0c2eaeb5cbb55edfb17c6bbb321298aa19ce7a33a7b452366b",
       "trust_anchors_sha256": {},
       "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+      "policy_members_not_used": [],
       "state": "held",
       "steps": {
         "1": "PASS",
@@ -137,16 +148,18 @@
       ],
       "first_failed_step": null,
       "first_not_run_step": "2",
+      "named_step": "2",
       "summary": "state held; step 1 PASS; step 2 NOT RUN; step 3 PASS"
     },
     "agrees_with_expected_under_02": true
   },
   "p07-negative-judgement-no-cause": {
     "reference_checker": {
-      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-02",
-      "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-03",
+      "policy_sha256": "8d5b558e3aee9d0c2eaeb5cbb55edfb17c6bbb321298aa19ce7a33a7b452366b",
       "trust_anchors_sha256": {},
       "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+      "policy_members_not_used": [],
       "state": "released",
       "steps": {
         "1": "PASS",
@@ -158,16 +171,18 @@
       "not_relied_on": [],
       "first_failed_step": null,
       "first_not_run_step": null,
+      "named_step": null,
       "summary": "state released; step 1 PASS; step 2 PASS; step 3 PASS"
     },
     "agrees_with_expected_under_02": true
   },
   "p08-irontrellis-refusal": {
     "reference_checker": {
-      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-02",
-      "policy_sha256": "8ee3814ccf206eb87e2c5d1bd9d21d65d16d362867248c287fc11ff40ddf2e8c",
+      "checker": "vrcheck.py, reference checker for draft-wright-verdict-record-03",
+      "policy_sha256": "e238e4cf2d6e36d6ea866075b24d88c0401beac6d22966c0ef0ef71571207745",
       "trust_anchors_sha256": {},
       "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+      "policy_members_not_used": [],
       "state": "held",
       "steps": {
         "1": "PASS",
@@ -185,6 +200,7 @@
       ],
       "first_failed_step": null,
       "first_not_run_step": "2",
+      "named_step": "2",
       "summary": "state held; step 1 PASS; step 2 NOT RUN; step 3 NOT RUN"
     },
     "agrees_with_expected_under_02": false

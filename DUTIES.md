@@ -1,5 +1,11 @@
 # What draft-wright-verdict-record-02 asks of a checker, and what shows the reference checker does it
 
+**-03.** The duties below are those of -02, with its line numbers. draft-wright-verdict-record-03 keeps each of them and
+states what -02 left to the checker (README, "What -03 settled"): D08 now names a refusal before any step by section
+(-03 Section 2.1) and refuses a claim.ref missing from evidence there (-03 Section 2.3); D17's step-2 reading (I-2) is
+retired; D41-D42 read the -03 member names, and a member -03 does not define is not used rather than invalid
+(-03 Section 4.5). Each change is marked "-03" at the line of `vrcheck.py` that implements it.
+
 Lines are those of the published text, https://www.ietf.org/archive/id/draft-wright-verdict-record-02.txt
 (md5 e02052750dc143f4aaea2d56abcfc5dc). "Before" is `vrcheck.py` at commit 97b63b2 (written for -01); "after" is
 `vrcheck.py` on this branch. A duty id appears as a comment on the line of `vrcheck.py` that implements it, and in the

@@ -24,7 +24,7 @@ SALTED = "urn:example:verdict-record:format:salted-commitment"
 AT_LEAST = "urn:example:verdict-record:rule:at-least"
 UB = "2026-11-01T12:00:00.000000Z"
 
-POLICY = {"judgement_kinds": ["model-decision"], "formats": [OPAQUE, NEVER, VR, ATTEST, PROOF], "max_depth": 2}
+POLICY = {"judgement_kinds": ["model-decision"], "formats": [OPAQUE, NEVER, VR, ATTEST, PROOF], "citation_depth": 2}
 
 ITEM1 = b"evidence item one: an opaque test item"
 
@@ -173,7 +173,7 @@ r08 = C(rec(key="irontrellis-v2-g3-authority-denial-precedes-budgets",
                    "inputs": {"case": {"evidence": 0, "pointer": "/57"}, "history": {"evidence": 1, "pointer": ""}},
                    "result": IT_RESULT},
             body={"claim": {"text": "Replaying the authority history refuses the request in conformance case authorization/v2/authority-denial-precedes-budgets, with cause AMOUNT_EXCEEDED."}}))
-IT_POLICY = {"judgement_kinds": [], "formats": [IT_SUITE_FMT, IT_HIST_FMT], "max_depth": 0}
+IT_POLICY = {"judgement_kinds": [], "formats": [IT_SUITE_FMT, IT_HIST_FMT], "citation_depth": 0}
 cases.append({
     "name": "p08-irontrellis-refusal",
     "proposal": "V13-09 one evidence slot; V13-10 a refusal carries its cause. Offered to the IronTrellis author on the AUDIT list, 6 Nov 2026.",

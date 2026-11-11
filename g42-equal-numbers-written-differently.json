@@ -1,0 +1,35 @@
+{
+  "name": "g42-equal-numbers-written-differently",
+  "section": "draft-wright-verdict-record-03 Section 4.3",
+  "description": "The equals rule on 1.0 and 1, and on two arrays holding 2.50 and 2.5: equal as JSON values (same mathematical value); the record states equal for the first pair and is released.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIHZhbHVlIG4gb2YgdGhlIGNpdGVkIGl0ZW0gaXMgYXQgbGVhc3QgaXRzIHZhbHVlIG0uIn19LCJjaGVjayI6eyJpbnB1dHMiOnsiYSI6eyJldmlkZW5jZSI6MCwicG9pbnRlciI6Ii94In0sImIiOnsiZXZpZGVuY2UiOjAsInBvaW50ZXIiOiIveSJ9fSwicmVzdWx0IjoiZXF1YWwiLCJydWxlIjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6cnVsZTplcXVhbHMifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOmZvcm1hdDpvcGFxdWUiLCJzaGEyNTYiOiJkNjkwMzIzZTUwNDFjMDI2YTRhYjMxYzcxOWM2ZDEwNjZhMmYzNDE4Zjk5YTc2MzliMDYwZTVjNGExMzk1MzdjIn1dLCJrZXkiOiJrLTAwMDMiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJpc3N1ZXIuZXhhbXBsZSJ9",
+  "record_sha256": "3c0c57cf4198617b9c0f542e3c5eb00cb30221e695d1213751c3b6867f12486b",
+  "evidence_items": [
+    {
+      "b64": "eyJ4IjoxLjAsInkiOjEsInoiOlsxLHsidyI6Mi41MH1dLCJ0IjpbMSx7InciOjIuNX1dfQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "citation_depth": 2
+  },
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
+  "expected": {
+    "state": "released",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "PASS"
+    },
+    "named": "PASS"
+  },
+  "decided_by": "both are numbers with the same mathematical value"
+}

@@ -1,6 +1,6 @@
 # One chain case: our state and steps beside the case's
 
-Case commit read: `9e1c7a0b047129d71c5694995e0014eecdf2289c`. Policy: the case's own, verbatim (sha256 `c2839fed12d7a006c89810a8e5dfaab83558fcca314e080191a4a84bb5c02582`). Written by run.py.
+Case commit read: `f0d766a1ca8422c64ad792fad7876db2737a7f72`. Policy: the case's own, verbatim (sha256 `c2839fed12d7a006c89810a8e5dfaab83558fcca314e080191a4a84bb5c02582`). Written by run.py.
 
 | directory | record | stated | ours | container | agree | class |
 |---|---|---|---|---|---|---|
@@ -32,8 +32,8 @@ Case commit read: `9e1c7a0b047129d71c5694995e0014eecdf2289c`. Policy: the case's
 | N11-receipt-signed-by-a-key-not-the-issuers | verdict-record-other-result.json | refused PASS/PASS/FAIL | refused PASS/PASS/FAIL | not published | yes |  |
 | N12-issuer-id-not-the-kid | verdict-record.json | released PASS/PASS/PASS | released PASS/PASS/PASS | shows the record | yes |  |
 | N12-issuer-id-not-the-kid | verdict-record-other-result.json | refused PASS/PASS/FAIL | refused PASS/PASS/FAIL | not published | yes |  |
-| N13-a2-altered-after-the-verdict-cited-it | verdict-record.json | held PASS/NOT RUN/NOT RUN | released PASS/PASS/PASS | shows the record | no | his case |
-| N13-a2-altered-after-the-verdict-cited-it | verdict-record-other-result.json | held PASS/NOT RUN/NOT RUN | refused PASS/PASS/FAIL | not published | no | his case |
+| N13-a2-altered-after-the-verdict-cited-it | verdict-record.json | held PASS/NOT RUN/NOT RUN | held PASS/NOT RUN/NOT RUN | shows the record | yes |  |
+| N13-a2-altered-after-the-verdict-cited-it | verdict-record-other-result.json | held PASS/NOT RUN/NOT RUN | held PASS/NOT RUN/NOT RUN | not published | yes |  |
 | N14-dispute-reason-code-missing | verdict-record.json | released PASS/PASS/PASS | released PASS/PASS/PASS | shows the record | yes |  |
 | N14-dispute-reason-code-missing | verdict-record-other-result.json | refused PASS/PASS/FAIL | refused PASS/PASS/FAIL | not published | yes |  |
 | N15-approval-after-the-allow-outcome | verdict-record.json | refused PASS/PASS/FAIL | refused PASS/PASS/FAIL | shows the record | yes |  |
@@ -50,3 +50,5 @@ Case commit read: `9e1c7a0b047129d71c5694995e0014eecdf2289c`. Policy: the case's
 | N20-manifest-without-any-settlement-block | verdict-record-other-result.json | refused PASS/PASS/FAIL | refused PASS/PASS/FAIL | not published | yes |  |
 | N21-approval-event-for-another-action | verdict-record.json | released PASS/PASS/PASS | released PASS/PASS/PASS | shows the record | yes |  |
 | N21-approval-event-for-another-action | verdict-record-other-result.json | refused PASS/PASS/FAIL | refused PASS/PASS/FAIL | not published | yes |  |
+| N22-a2-issuer-seal-broken | verdict-record.json | held PASS/NOT RUN/NOT RUN | held PASS/NOT RUN/NOT RUN | shows the record | yes |  |
+| N22-a2-issuer-seal-broken | verdict-record-other-result.json | held PASS/NOT RUN/NOT RUN | held PASS/NOT RUN/NOT RUN | not published | yes |  |

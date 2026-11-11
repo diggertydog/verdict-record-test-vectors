@@ -23,20 +23,22 @@
     "formats": [
       "https://datatracker.ietf.org/doc/draft-durga-agenttrust-trace-verification/"
     ],
-    "max_depth": 0,
+    "citation_depth": 0,
     "inputs_from_evidence_only": true
   },
-  "policy_sha256": "f8f3653081eeaff344cce03a0d9c1a73a263502c6e672315f2f93f3823bed0e5",
+  "policy_sha256": "04d0af352b956fb0f1ce70d3a8cc0614f7ccb667ab65ae24a3ed3d0a89f9c2d5",
   "expected": {
     "state": "held",
     "steps": {
       "1": "PASS",
       "2": "NOT RUN",
       "3": "NOT RUN"
-    }
+    },
+    "named": "NOT RUN at step 2"
   },
   "hold": [
     "appendix_a2_rule.py",
     "appendix_a2_hops_signature_required.py"
-  ]
+  ],
+  "decided_by": "An integer of 0 or more: the depth of citation the checker follows"
 }

@@ -1,0 +1,32 @@
+{
+  "name": "g36-claim-ref-no-evidence",
+  "section": "draft-wright-verdict-record-03 Section 2.3",
+  "description": "body.claim.ref with no evidence member at all: refused before any step, Section 2.3.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJyZWYiOnsiZm9ybWF0IjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6Zm9ybWF0Om9wYXF1ZSIsInNoYTI1NiI6ImYzY2UzN2JiNmEyM2QyMTI0MmRmYjNlNmMzMDNkOGE3MTdhOTFjMGFhY2EwZDFlYzViZTRiNmU1NmIwNjRhNTEifX19LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjp7ImV2aWRlbmNlIjowLCJwb2ludGVyIjoiL20ifSwidmFsdWUiOnsiZXZpZGVuY2UiOjAsInBvaW50ZXIiOiIvbiJ9fSwicmVzdWx0IjoicGFzcyIsInJ1bGUiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpydWxlOmF0LWxlYXN0In0sImtleSI6ImstMDAwMyIsImtpbmQiOiJjaGVjay1ydW4iLCJzdXBlcnNlZGVzIjpudWxsLCJ2IjoidmVyZGljdC1yZWNvcmQvMSIsInZlcnNpb24iOjEsIndyaXRlciI6Imlzc3Vlci5leGFtcGxlIn0=",
+  "record_sha256": "9a8896301ff9930cbc4f730c703427715e7441d040f74dfa6138f28942e7fb8d",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "citation_depth": 2
+  },
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
+  "expected": {
+    "state": "refused",
+    "steps": null,
+    "no_step_runs": true,
+    "named": "Section 2.3"
+  },
+  "decided_by": "including a record with no evidence array, breaks this section and is refused before any step runs"
+}

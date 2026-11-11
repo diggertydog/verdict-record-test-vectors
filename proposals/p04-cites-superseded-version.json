@@ -30,9 +30,9 @@
       "urn:example:verdict-record:format:provider-attestation",
       "urn:example:verdict-record:format:inference-proof"
     ],
-    "max_depth": 2
+    "citation_depth": 2
   },
-  "policy_sha256": "00d550955ce21ae7e9f785860890b612f6a20e9f01ef1c360bcddc34f7b02788",
+  "policy_sha256": "8d5b558e3aee9d0c2eaeb5cbb55edfb17c6bbb321298aa19ce7a33a7b452366b",
   "expected_under_02": {
     "state": "released",
     "steps": {

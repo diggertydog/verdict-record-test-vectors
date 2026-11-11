@@ -1,4 +1,10 @@
-"""Reference checker for draft-wright-verdict-record-02 (Sections 2, 3 and 4).
+"""Reference checker for draft-wright-verdict-record-03 (Sections 2, 3 and 4).
+
+-03 CHANGES (each marked "-03" at the line that implements it): refusal before any step named by section (2.1,
+2.3), body.claim required and claim.ref checked before any step (2.2, 2.3), any string kind (2.2), policy member
+names and unknown members not used (4.5), inputs resolved whether or not the rule is held, FAIL outranks NOT RUN,
+results compared as JSON values (4.3), the named step (4.1). Duty ids and line numbers below are those of -02;
+DUTIES.md maps them.
 
 This file is the text of draft-wright-verdict-record-02 made executable. Each duty the draft gives a checker
 carries its id (D01 ...) and the line of the published -02 text it comes from, as
@@ -18,6 +24,7 @@ container). A presenter that holds a container hands it in with a held container
 """
 import base64
 import datetime
+import decimal
 import hashlib
 import importlib.util
 import json
@@ -25,7 +32,7 @@ import os
 import re
 import sys
 
-DRAFT = "draft-wright-verdict-record-02"
+DRAFT = "draft-wright-verdict-record-03"
 MAX_DEPTH = 32                       # D03, -02 line 207
 INT_MAX = 2**53 - 1                  # D04, -02 lines 211-213
 TOP_MEMBERS = {"v", "kind", "key", "version", "supersedes", "writer", "actor",
@@ -118,7 +125,7 @@ def canonical(obj):
                       ensure_ascii=False, allow_nan=False).encode("utf-8")
 
 
-def parse_strict_json(b):
+def parse_strict_json(b, decimals=False):
     """Strict JSON by the rules of Section 2.1 (D02, D03): valid UTF-8, no byte-order mark, no member name twice,
     no lone surrogate, no deeper than 32 levels. This is what Section 2.2 asks of an evidence item a pointer reads
     (-02 lines 296-298): the item need not be canonical.
@@ -133,7 +140,8 @@ def parse_strict_json(b):
         raise ParseError("Section 2.1: not valid UTF-8")
     _check_depth_text(s)
     try:
-        obj = json.loads(s, object_pairs_hook=_no_dupes, parse_constant=_bad_constant)
+        obj = json.loads(s, object_pairs_hook=_no_dupes, parse_constant=_bad_constant,
+                         parse_float=decimal.Decimal if decimals else None)
     except ParseError:
         raise
     except (ValueError, RecursionError) as e:
@@ -154,6 +162,11 @@ def sha256hex(b):
     return hashlib.sha256(b).hexdigest()                # D09, -02 lines 229-230
 
 
+def is_hex_form(s):
+    # -03 Section 2.1: hex is lowercase, two characters per byte, with no prefix.
+    return isinstance(s, str) and re.fullmatch(r"(?:[0-9a-f]{2})*", s) is not None
+
+
 def is_hex64(s):
     # -02 lines 214-215: hex is lowercase, two characters per byte, no prefix.
     return isinstance(s, str) and len(s) == 64 and all(c in "0123456789abcdef" for c in s)
@@ -161,6 +174,27 @@ def is_hex64(s):
 
 def is_int(x):
     return isinstance(x, int) and not isinstance(x, bool)
+
+
+def _is_num(x):
+    return isinstance(x, (int, float, decimal.Decimal)) and not isinstance(x, bool)
+
+
+def json_equal(a, b):
+    """-03 Section 4.3: two JSON values are equal when both are strings with the same code points, both numbers with
+    the same mathematical value, both true, both false, both null, arrays of the same length equal in order, or objects
+    with the same member names whose values are equal name by name."""
+    if _is_num(a) and _is_num(b):
+        return decimal.Decimal(str(a)) == decimal.Decimal(str(b)) if not (is_int(a) and is_int(b)) else a == b
+    if isinstance(a, bool) or isinstance(b, bool) or a is None or b is None:
+        return a is b
+    if isinstance(a, str) and isinstance(b, str):
+        return a == b
+    if isinstance(a, list) and isinstance(b, list):
+        return len(a) == len(b) and all(json_equal(x, y) for x, y in zip(a, b))
+    if isinstance(a, dict) and isinstance(b, dict):
+        return set(a) == set(b) and all(json_equal(a[k], b[k]) for k in a)
+    return False
 
 
 def is_time(s):
@@ -197,9 +231,9 @@ def member_errors(r):
     # D11, -02 line 240. READING (O-13): a v other than the one value this document defines is refused.
     if "v" in r and r["v"] != "verdict-record/1":
         errs.append("Section 2.2: v is not \"verdict-record/1\"")
-    # D11, -02 lines 242-245. READING (O-13): any non-empty string kind is read; only judgement depends on it (step 1).
-    if "kind" in r and not (isinstance(r["kind"], str) and r["kind"] != ""):
-        errs.append("Section 2.2: kind is not a non-empty string")
+    # D11. -03 Section 2.2: "A checker reads any string as a kind, including one this document does not define".
+    if "kind" in r and not isinstance(r["kind"], str):
+        errs.append("Section 2.2: kind is not a string")
     if "key" in r and not (isinstance(r["key"], str) and r["key"] != ""):          # D11, -02 lines 247-248
         errs.append("Section 2.2: key is not a non-empty string")
     if "version" in r and not (is_int(r["version"]) and r["version"] >= 1):       # D11, -02 lines 250-251
@@ -208,8 +242,15 @@ def member_errors(r):
         sup = r.get("supersedes")
         if r["version"] == 1 and sup is not None:
             errs.append("Section 2.2: supersedes is not null for version 1")
-        if r["version"] > 1 and not is_hex64(sup):
-            errs.append("Section 2.2: supersedes is not the digest of the previous version")
+        if r["version"] > 1:
+            # -03 Section 2.1: "A rule of form that this section states and Section 2.2 applies to a member, such as
+            # the form of a time or of hex, is a rule of this section." A string that is not hex as 2.1 writes it
+            # breaks 2.1; anything else that is not a digest (absent, null, another type, hex of another length)
+            # breaks 2.2.
+            if isinstance(sup, str) and not is_hex_form(sup):
+                errs.append("Section 2.1: supersedes is not hex in the form Section 2.1 states")
+            elif not is_hex64(sup):
+                errs.append("Section 2.2: supersedes is not the digest of the previous version")
     if "writer" in r and not (isinstance(r["writer"], str) and r["writer"] != ""):  # D11, -02 lines 256-257
         errs.append("Section 2.2: writer is not a non-empty string")
     if "actor" in r:                                                              # D11, -02 lines 259-261
@@ -226,53 +267,56 @@ def member_errors(r):
         b = r["body"]
         if not isinstance(b, dict):                                               # D11, -02 lines 304-306
             errs.append("Section 2.2: body is not an object")
-        elif "claim" in b:
-            # D17, -02 lines 310-313: exactly one of text (a string) or ref (an evidence entry).
-            # READING (O-14): a claim of another shape breaks Sections 2.2-2.3 and is refused before any step;
-            # a body with no claim is read (-02 does not say claim is required).
+        elif "claim" not in b:
+            errs.append("Section 2.3: body.claim is missing")                # -03 Section 2.2: "which MUST be present"
+        else:
+            # D17: exactly one of text (a string) or ref (an evidence entry).
             c = b["claim"]
             ok = isinstance(c, dict) and len(c) == 1 and (
                 ("text" in c and isinstance(c["text"], str)) or ("ref" in c and is_entry(c["ref"])))
-            if not ok:
+            ref = c.get("ref") if isinstance(c, dict) else None
+            if (not ok and isinstance(ref, dict) and set(ref) == {"sha256", "format"}
+                    and isinstance(ref["sha256"], str) and not is_hex_form(ref["sha256"])):
+                errs.append("Section 2.1: body.claim.ref.sha256 is not hex in the form Section 2.1 states")  # -03 2.1
+            elif not ok:
                 errs.append("Section 2.3: body.claim is not an object with exactly one of text or ref")
+            elif "ref" in c:
+                # -03 Section 2.3: a ref that does not appear in evidence, including a record with no evidence array,
+                # breaks Section 2.3 and is refused before any step (was READING I-2, a FAIL of step 2, under -02).
+                ev = r.get("evidence")
+                if not (isinstance(ev, list) and any(json_equal(e, c["ref"]) for e in ev)):
+                    errs.append("Section 2.3: body.claim.ref does not appear in evidence")
     return errs
 
 
 # ======================================================================= Section 4.5: policy
 
-POLICY_DEPTH_NAMES = ("citation_depth", "max_depth")
-POLICY_MEMBERS = {"judgement_kinds", "formats", "inputs_from_evidence_only"}   # with a depth name: what is read (O-2)
+POLICY_MEMBERS = ("judgement_kinds", "formats", "citation_depth", "inputs_from_evidence_only")   # -03 Section 4.5
 
 
 def read_policy(p):
-    """D41, D42, -02 lines 467-474. Returns (policy, None) or (None, reason) when invalid.
-
-    -02 names what a policy states but not the member names. READING (O-1, stopgap): this checker reads
-    judgement_kinds, formats, the depth as citation_depth or max_depth (exactly one), and inputs_from_evidence_only
-    (optional, a boolean). citation_depth and inputs_from_evidence_only are the names a second checker of -02 chose
-    (Laurent Lemonnier's, interop/verdict-record); max_depth is the name these vectors used under -01. Retires when
-    -03 names the members: the alias that -03 does not adopt is then dropped and the vectors regenerated.
-    READING (O-2): a member this checker does not know is read past, and the policy runs without it. -02 lines
-    472-474 make a policy invalid only when it lacks one of the first three members or states one in another form;
-    an unknown member is neither. This is the second checker's reading too (Laurent Lemonnier's, interop/verdict-record,
-    on p05). Its cost: a limit stated under a name this checker does not know is not applied. The report's policy
-    digest covers the whole policy as given, unknown members included, so another checker can see what was stated."""
+    """-03 Section 4.5. Returns (policy, None) or (None, reason) when invalid. The members are judgement_kinds (an array
+    of strings), formats (an array of strings), citation_depth (an integer of 0 or more) and, optionally,
+    inputs_from_evidence_only (true or false, false when absent). "A policy member that this document does not define
+    does not make the policy invalid. The checker does not apply it, and the report names it as not used"; the policy
+    digest covers it. (Under -02 this checker also read the depth as max_depth, a stopgap that retired with -03.)"""
     if not isinstance(p, dict):
-        return None, "the policy is not an object"
-    depth_names = [n for n in POLICY_DEPTH_NAMES if n in p]
-    if len(depth_names) != 1:
-        return None, "the depth of citation is not stated exactly once"
-    jk, fm, dp = p.get("judgement_kinds"), p.get("formats"), p[depth_names[0]]
+        return None, "the policy is not a JSON object"
+    for m in ("judgement_kinds", "formats", "citation_depth"):
+        if m not in p:
+            return None, "the policy lacks %s" % m
+    jk, fm, dp = p["judgement_kinds"], p["formats"], p["citation_depth"]
     if not (isinstance(jk, list) and all(isinstance(k, str) for k in jk)):
-        return None, "judgement_kinds is not a list of strings"
+        return None, "judgement_kinds is not an array of strings"
     if not (isinstance(fm, list) and all(isinstance(k, str) for k in fm)):
-        return None, "formats is not a list of strings"
+        return None, "formats is not an array of strings"
     if not (is_int(dp) and dp >= 0):
-        return None, "the depth of citation is not an integer of 0 or more"
+        return None, "citation_depth is not an integer of 0 or more"
     eo = p.get("inputs_from_evidence_only", False)
     if not isinstance(eo, bool):
-        return None, "inputs_from_evidence_only is not a boolean"
-    return {"judgement_kinds": jk, "formats": fm, "depth": dp, "evidence_only": eo}, None
+        return None, "inputs_from_evidence_only is not true or false"
+    not_used = sorted(set(p) - set(POLICY_MEMBERS))
+    return {"judgement_kinds": jk, "formats": fm, "depth": dp, "evidence_only": eo, "not_used": not_used}, None
 
 
 def policy_valid(p):
@@ -378,7 +422,7 @@ def resolve_input(name, where, r, ev, relied, items, pol, body_read):
     if "pointer" not in where:                                       # D15, -02 lines 294-295
         return sha256hex(it["bytes"])
     try:                                                             # D16, -02 lines 295-298
-        doc = parse_strict_json(it["bytes"])
+        doc = parse_strict_json(it["bytes"], decimals=True)          # -03 4.3: numbers need not be integers
     except ParseError as x:
         raise Unresolved("fail", "input %s: evidence[%d] is not JSON by the rules of Section 2.1 (%s)" % (name, i, x))
     try:
@@ -397,11 +441,14 @@ def check(record_bytes, ctx, depth=0):
     try:
         r = parse_record(record_bytes)
     except ParseError as e:                                          # D08, -02 lines 216-219
-        rep.update(state="refused", reasons={"before_steps": str(e)})
+        rep.update(state="refused", reasons={"before_steps": str(e)}, refused_by_section="2.1", named_step=None)
         return rep
     errs = member_errors(r)
     if errs:                                                         # D08, D11, -02 lines 216-219
-        rep.update(state="refused", reasons={"before_steps": "; ".join(errs)})
+        # -03 Section 2.1: the refusal is named by the first of 2.1, 2.2, 2.3 whose rule the record breaks.
+        secs = sorted(re.match(r"Section (2\.[123])", e).group(1) for e in errs)
+        rep.update(state="refused", reasons={"before_steps": "; ".join(errs)}, refused_by_section=secs[0],
+                   named_step=None)
         return rep
 
     pol, held = ctx["policy"], ctx["held"]
@@ -426,21 +473,18 @@ def check(record_bytes, ctx, depth=0):
     if not (isinstance(ev, list) and all(is_entry(e) for e in ev)):
         steps["2"] = "FAIL"; reasons["2"] = "evidence is missing or an entry is not as in Section 2.2"
     else:
-        claim = r["body"].get("claim")
-        if isinstance(claim, dict) and "ref" in claim and claim["ref"] not in ev:
-            # D17, -02 lines 313-314. READING (I-2): the ref missing from evidence is a FAIL of step 2.
-            steps["2"] = "FAIL"; reasons["2"] = "body.claim.ref does not appear in evidence"
-        else:
-            not_relied = []
-            for i, e in enumerate(ev):
-                why = entry_problem(i, e, ctx, depth)
-                if why is None:
-                    relied.add(i)
-                else:
-                    not_relied.append(why)
-            if not_relied:
-                steps["2"] = "NOT RUN"; reasons["2"] = "; ".join(not_relied)
-                rep["not_relied_on"] = not_relied
+        # (-02 READING I-2, a claim.ref missing from evidence as a FAIL of step 2, retired: -03 Section 2.3 refuses it
+        # before any step.) -03 Section 4.3: step 2 examines every entry and names every one it cannot rely on.
+        not_relied = []
+        for i, e in enumerate(ev):
+            why = entry_problem(i, e, ctx, depth)
+            if why is None:
+                relied.add(i)
+            else:
+                not_relied.append(why)
+        if not_relied:
+            steps["2"] = "NOT RUN"; reasons["2"] = "; ".join(not_relied)
+            rep["not_relied_on"] = not_relied
 
     # ---- Step 3 (D29-D35, -02 lines 415-427)
     if check_ok and c["rule"] == "judgement":
@@ -464,6 +508,8 @@ def check(record_bytes, ctx, depth=0):
     rep.update(state=state, steps=steps)
     rep["first_failed_step"] = next((s for s in "123" if steps[s] == "FAIL"), None)
     rep["first_not_run_step"] = next((s for s in "123" if steps[s] == "NOT RUN"), None)
+    # -03 Section 4.1: the check names the first step that FAILed, else the first that could not run.
+    rep["named_step"] = rep["first_failed_step"] or rep["first_not_run_step"]
     return rep
 
 
@@ -525,7 +571,7 @@ def step3(r, c, ev, relied, ctx, body_read):
         got = rule.rerun(values, ctx)
     except Exception as x:  # READING (O-7): a held rule that cannot be run on resolved inputs leaves step 3 NOT RUN.
         return "NOT RUN", "the held rule could not be re-run: %s: %s" % (type(x).__name__, x), None
-    if got != c["result"]:                                            # D34, -02 line 427
+    if not json_equal(got, c["result"]):                              # D34; -03 4.3: compared as JSON values
         return "FAIL", "the re-run gave %s, the record states %s" % (
             json.dumps(got, ensure_ascii=False), json.dumps(c["result"], ensure_ascii=False)), got
     return "PASS", None, got
@@ -549,6 +595,8 @@ def check_container(record_bytes, record, container, held, anchors):
 def summary_line(rep):
     # D39, -02 lines 456-457: a summary line names the state and every step's result.
     if rep["steps"] is None:
+        if rep.get("refused_by_section"):
+            return "state %s; no step ran; refused by Section %s" % (rep["state"], rep["refused_by_section"])
         return "state %s; no step ran" % rep["state"]
     return "state %s; step 1 %s; step 2 %s; step 3 %s" % (rep["state"], rep["steps"]["1"], rep["steps"]["2"],
                                                           rep["steps"]["3"])
@@ -567,6 +615,7 @@ def run(record_bytes, policy, upper_time_bound, items, held, anchors=None, conta
         out.update(state="no verdict", steps=None, reasons={"policy": "invalid: " + why})
         out["summary"] = summary_line(out)
         return out
+    out["policy_members_not_used"] = pol["not_used"]                   # -03 Sections 4.4, 4.5
     ctx = {"policy": pol, "upper_time_bound": upper_time_bound, "items": items, "held": held, "anchors": anchors}
     rep = check(record_bytes, ctx)
     out.update(rep)

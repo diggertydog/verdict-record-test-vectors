@@ -23,13 +23,15 @@
       "urn:example:verdict-record:format:never-verifies",
       "verdict-record/1"
     ],
-    "max_depth": 2,
+    "citation_depth": 2,
     "inputs_from_evidence_only": "yes"
   },
-  "policy_sha256": "7daba4b9937c4b32d52f8245e90c7dc6de345d0a2d53811b33a87323d38d69f7",
+  "policy_sha256": "1c129d144bb4ef6ebe64afa587356576d4529584e3a378044e3d9c1543ecb596",
   "expected": {
     "state": "no verdict",
-    "steps": null
+    "steps": null,
+    "named": null
   },
-  "depends_on_interpretation": "O-2"
+  "depends_on_interpretation": "O-2",
+  "decided_by": "An integer of 0 or more: the depth of citation the checker follows"
 }

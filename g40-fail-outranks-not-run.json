@@ -1,0 +1,38 @@
+{
+  "name": "g40-fail-outranks-not-run",
+  "section": "draft-wright-verdict-record-03 Section 4.3",
+  "description": "Two inputs: one bound to an item step 2 does not rely on (NOT RUN), one of the wrong type for the held rule (FAIL). The FAIL outranks: refused, FAIL at step 3.",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTEtMDFUMTA6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoicnVubmVyLTEiLCJtb2RlbCI6Im5vbmUiLCJtb2RlbF92ZXJzaW9uIjoiMCIsInR5cGUiOiJzeXN0ZW0ifSwiYm9keSI6eyJjbGFpbSI6eyJ0ZXh0IjoiVGhlIHZhbHVlIG4gb2YgdGhlIGNpdGVkIGl0ZW0gaXMgYXQgbGVhc3QgaXRzIHZhbHVlIG0uIn19LCJjaGVjayI6eyJpbnB1dHMiOnsibWluIjp7ImV2aWRlbmNlIjowLCJwb2ludGVyIjoiL3MifSwidmFsdWUiOnsiZXZpZGVuY2UiOjEsInBvaW50ZXIiOiIvbiJ9fSwicmVzdWx0IjoicGFzcyIsInJ1bGUiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpydWxlOmF0LWxlYXN0In0sImV2aWRlbmNlIjpbeyJmb3JtYXQiOiJ1cm46ZXhhbXBsZTp2ZXJkaWN0LXJlY29yZDpmb3JtYXQ6b3BhcXVlIiwic2hhMjU2IjoiZjNjZTM3YmI2YTIzZDIxMjQyZGZiM2U2YzMwM2Q4YTcxN2E5MWMwYWFjYTBkMWVjNWJlNGI2ZTU2YjA2NGE1MSJ9LHsiZm9ybWF0IjoidXJuOmV4YW1wbGU6dmVyZGljdC1yZWNvcmQ6Zm9ybWF0Om5ldmVyLXZlcmlmaWVzIiwic2hhMjU2IjoiZWY1ZDE2YjM5ZDdlMTA3ZmJlZjYzOTQzM2E0NWM4N2Y4NDE1MGY5MzE3NWNlNzJkNjA0NmY4NzYyZDAxNzY0OSJ9XSwia2V5Ijoiay0wMDAzIiwia2luZCI6ImNoZWNrLXJ1biIsInN1cGVyc2VkZXMiOm51bGwsInYiOiJ2ZXJkaWN0LXJlY29yZC8xIiwidmVyc2lvbiI6MSwid3JpdGVyIjoiaXNzdWVyLmV4YW1wbGUifQ==",
+  "record_sha256": "3d09aaf08b6cbb7ad7352d15f123ccd631ab9069edcda836f81bfcb8a6df7f9e",
+  "evidence_items": [
+    {
+      "b64": "eyJtIjo1LCJuIjo3LCJzIjoic2V2ZW4ifQ=="
+    },
+    {
+      "b64": "ZXZpZGVuY2UgaXRlbSB0aHJlZTogYW4gaXRlbSB3aG9zZSBmb3JtYXQncyBydWxlcyBhcmUgbmV2ZXIgbWV0"
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "urn:example:verdict-record:format:opaque",
+      "urn:example:verdict-record:format:never-verifies",
+      "verdict-record/1"
+    ],
+    "citation_depth": 2
+  },
+  "policy_sha256": "6afea749c95add33e085c577d6e92876d03d817701b2c740926dad72b9e060f8",
+  "expected": {
+    "state": "refused",
+    "steps": {
+      "1": "PASS",
+      "2": "NOT RUN",
+      "3": "FAIL"
+    },
+    "named": "FAIL at step 3"
+  },
+  "decided_by": "Within step 3, a FAIL outranks a NOT RUN"
+}

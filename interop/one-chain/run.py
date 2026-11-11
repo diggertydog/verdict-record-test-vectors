@@ -32,7 +32,7 @@ TOP = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, TOP)
 import vrcheck  # noqa: E402
 
-CASE_COMMIT_READ = "9e1c7a0b047129d71c5694995e0014eecdf2289c"
+CASE_COMMIT_READ = "f0d766a1ca8422c64ad792fad7876db2737a7f72"   # N22 added, N13 files republished
 RECORDS = (("verdict-record.json", "link3_verdict"), ("verdict-record-other-result.json", "link3_other_verdict"))
 
 
@@ -59,7 +59,11 @@ def main():
     rows = []
     for d in dirs:
         name = os.path.relpath(d, case)
-        files = [p for p in glob.glob(os.path.join(d, "**", "*"), recursive=True) if os.path.isfile(p)]
+        # From the case's commit f0d766a1 on, a directory can also publish "<name>.as-cited-by-the-verdict.json": the
+        # bytes the verdict cites, kept beside the item the case's checker holds so that the row can be reproduced
+        # (N13). The case's checker does not hold them, so they are not handed in here.
+        files = [p for p in glob.glob(os.path.join(d, "**", "*"), recursive=True)
+                 if os.path.isfile(p) and not p.endswith(".as-cited-by-the-verdict.json")]
         items = {}
         for p in files:
             b = open(p, "rb").read()

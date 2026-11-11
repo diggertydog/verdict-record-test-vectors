@@ -25,21 +25,23 @@
     "formats": [
       "https://datatracker.ietf.org/doc/draft-durga-agenttrust-trace-verification/"
     ],
-    "max_depth": 0,
+    "citation_depth": 0,
     "inputs_from_evidence_only": true
   },
-  "policy_sha256": "f8f3653081eeaff344cce03a0d9c1a73a263502c6e672315f2f93f3823bed0e5",
+  "policy_sha256": "04d0af352b956fb0f1ce70d3a8cc0614f7ccb667ab65ae24a3ed3d0a89f9c2d5",
   "expected": {
     "state": "released",
     "steps": {
       "1": "PASS",
       "2": "PASS",
       "3": "PASS"
-    }
+    },
+    "named": "PASS"
   },
   "depends_on_interpretation": "I-9",
   "hold": [
     "appendix_a2_rule.py",
     "appendix_a2_hops_parse_only.py"
-  ]
+  ],
+  "decided_by": "the rule reads every scope as a grant and none as a limit"
 }
