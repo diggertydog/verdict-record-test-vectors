@@ -175,25 +175,121 @@ class RuleTypeError(Exception):
     pass
 
 
-def rule_at_least(body, inputs):
-    # urn:example:verdict-record:rule:at-least  (defined in RULES.md)
-    if not isinstance(inputs, dict) or set(inputs) != {"value", "min"}:
-        raise RuleTypeError("inputs must name value and min")
+class RuleNotRun(Exception):
+    pass
+
+
+def _json_pointer(doc, ptr):
+    if not isinstance(ptr, str) or (ptr != "" and not ptr.startswith("/")):
+        raise RuleTypeError("invalid JSON Pointer: %r" % (ptr,))
+    if ptr == "":
+        return doc
+    cur = doc
+    for raw_tok in ptr.split("/")[1:]:
+        tok = raw_tok.replace("~1", "/").replace("~0", "~")
+        if isinstance(cur, dict):
+            if tok not in cur:
+                raise RuleTypeError("pointer %r does not resolve" % ptr)
+            cur = cur[tok]
+        elif isinstance(cur, list):
+            if not tok.isdigit() or (len(tok) > 1 and tok.startswith("0")):
+                raise RuleTypeError("pointer %r array index invalid" % ptr)
+            idx = int(tok)
+            if idx < 0 or idx >= len(cur):
+                raise RuleTypeError("pointer %r array index out of bounds" % ptr)
+            cur = cur[idx]
+        else:
+            raise RuleTypeError("pointer %r traverses scalar" % ptr)
+    return cur
+
+
+def resolve_inputs(r, ctx, relied_indices, expected_keys):
+    inputs = r.get("check", {}).get("inputs")
+    if not isinstance(inputs, dict) or set(inputs) != expected_keys:
+        raise RuleTypeError("inputs must name %s" % ",".join(sorted(expected_keys)))
+    body = r.get("body") if isinstance(r.get("body"), dict) else {}
+    ev = r.get("evidence") if isinstance(r.get("evidence"), list) else []
     vals = {}
-    for p, m in inputs.items():
-        if not isinstance(m, str) or m not in body:
-            raise RuleTypeError("input %s names no member of body" % p)
-        if not is_int(body[m]):
+    not_run_reasons = []
+    type_errors = []
+    for k in sorted(inputs):
+        spec = inputs[k]
+        if isinstance(spec, str):
+            if spec not in body:
+                type_errors.append("input %s names no member of body" % k)
+            else:
+                vals[k] = body[spec]
+        elif isinstance(spec, dict):
+            if not ("evidence" in spec and set(spec) <= {"evidence", "pointer"} and is_int(spec["evidence"])):
+                type_errors.append("input %s binding object malformed" % k)
+                continue
+            idx = spec["evidence"]
+            if idx < 0 or idx >= len(ev):
+                type_errors.append("input %s evidence index out of range" % k)
+                continue
+            if idx not in relied_indices:
+                not_run_reasons.append(k)
+                continue
+            ent = ev[idx]
+            it = ctx["items"].get(ent["sha256"])
+            if "pointer" not in spec:
+                vals[k] = sha256hex(it["bytes"])
+            else:
+                try:
+                    # Section 2.2: parsed as strict JSON by Section 2.1; need not be canonical.
+                    s = it["bytes"].decode("utf-8")
+                    if it["bytes"].startswith(b"\xef\xbb\xbf"):
+                        raise ParseError("BOM")
+                    doc = json.loads(s, object_pairs_hook=_no_dupes, parse_constant=_bad_constant)
+                    _depth(doc)
+                    _check_values(doc)
+                    vals[k] = _json_pointer(doc, spec["pointer"])
+                except (UnicodeDecodeError, ValueError, ParseError, RuleTypeError) as e:
+                    type_errors.append("input %s: %s" % (k, e))
+        else:
+            type_errors.append("input %s binding has wrong type" % k)
+    # Section 4.3 step 3: "If one input cannot be read for the first reason [NOT RUN]
+    # and another for the second [FAIL], the step FAILs."
+    if type_errors:
+        raise RuleTypeError("; ".join(type_errors))
+    if not_run_reasons:
+        raise RuleNotRun("missing or unrelied evidence for input(s): %s" % ", ".join(not_run_reasons))
+    return vals
+
+
+def rule_at_least(r, ctx, relied_indices):
+    vals = resolve_inputs(r, ctx, relied_indices, {"value", "min"})
+    for p in ("value", "min"):
+        if not is_int(vals[p]):
             raise RuleTypeError("input %s is not an integer" % p)
-        vals[p] = body[m]
     return "pass" if vals["value"] >= vals["min"] else "fail"
 
 
-RULES = {"urn:example:verdict-record:rule:at-least": rule_at_least}
+def rule_hop_continuity_attenuation(r, ctx, relied_indices):
+    # Appendix A.2 (-02): urn:example:verdict-record:rule:hop-continuity-attenuation:v1
+    vals = resolve_inputs(r, ctx, relied_indices,
+                          {"parent_hash", "parent_digest", "parent_scopes", "child_scopes"})
+    if not (isinstance(vals["parent_hash"], str) and isinstance(vals["parent_digest"], str)):
+        raise RuleTypeError("parent_hash and parent_digest must be strings")
+    for sname in ("parent_scopes", "child_scopes"):
+        arr = vals[sname]
+        if not (isinstance(arr, list) and all(isinstance(x, str) for x in arr)):
+            raise RuleTypeError("%s must be an array of strings" % sname)
+    linked = (vals["parent_hash"] == vals["parent_digest"])
+    attenuated = all(s in vals["parent_scopes"] for s in vals["child_scopes"])
+    return "attenuated_and_linked" if (linked and attenuated) else "not_attenuated_or_not_linked"
+
+
+RULES = {
+    "urn:example:verdict-record:rule:at-least": rule_at_least,
+    "urn:example:verdict-record:rule:hop-continuity-attenuation:v1": rule_hop_continuity_attenuation,
+    "https://datatracker.ietf.org/doc/draft-durga-agenttrust-trace-verification/#rule-hop-continuity-attenuation-v1": rule_hop_continuity_attenuation,
+}
 
 TEST_FORMATS = {
     "urn:example:verdict-record:format:opaque": True,       # every item verifies
     "urn:example:verdict-record:format:never-verifies": False,
+    "https://datatracker.ietf.org/doc/draft-durga-agenttrust-trace-verification/": True,  # Appendix A.2 unsigned hop test format
 }
 
 
@@ -239,39 +335,60 @@ def check(record_bytes, ctx, depth=0):
         if isinstance(claim, dict) and "ref" in claim and claim["ref"] not in ev:
             steps[2] = "FAIL"; reasons[2] = "body.claim.ref does not appear in evidence"
         else:
+            relied_indices = set()
             for i, e in enumerate(ev):
                 it = ctx["items"].get(e["sha256"])
                 if it is None or sha256hex(it["bytes"]) != e["sha256"]:
-                    steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: item not held" % i; break
+                    if steps[2] == "PASS":
+                        steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: item not held" % i
+                    continue
                 if e["format"] not in pol["formats"]:
-                    steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: format not listed by policy" % i; break
+                    if steps[2] == "PASS":
+                        steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: format not listed by policy" % i
+                    continue
                 if e["format"] == "verdict-record/1":
                     if depth + 1 > pol["max_depth"]:
-                        steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: beyond citation depth" % i; break
+                        if steps[2] == "PASS":
+                            steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: beyond citation depth" % i
+                        continue
                     sub_ctx = dict(ctx, upper_time_bound=it.get("upper_time_bound"))
                     if sub_ctx["upper_time_bound"] is None:
-                        steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: no upper time bound for cited record" % i; break
+                        if steps[2] == "PASS":
+                            steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: no upper time bound for cited record" % i
+                        continue
                     st, _, _ = check(it["bytes"], sub_ctx, depth + 1)
                     if st != "released":
-                        steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: cited record is %s" % (i, st); break
+                        if steps[2] == "PASS":
+                            steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: cited record is %s" % (i, st)
+                        continue
                 elif e["format"] in TEST_FORMATS:
                     if not TEST_FORMATS[e["format"]]:
-                        steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: does not verify" % i; break
+                        if steps[2] == "PASS":
+                            steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: does not verify" % i
+                        continue
                 else:
-                    steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: checker cannot verify this format" % i; break
+                    if steps[2] == "PASS":
+                        steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: checker cannot verify this format" % i
+                    continue
                 ub = it.get("upper_time_bound")
                 if ub is not None and ub > ctx["upper_time_bound"]:
-                    steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: its upper time bound is later than the record's" % i; break
+                    if steps[2] == "PASS":
+                        steps[2] = "NOT RUN"; reasons[2] = "evidence[%d]: its upper time bound is later than the record's" % i
+                    continue
+                relied_indices.add(i)
 
     # Step 3
+    if not isinstance(ev, list) or not ok_shape or (isinstance(claim, dict) and "ref" in claim and claim["ref"] not in ev):
+        relied_indices = set()
     if isinstance(c, dict) and isinstance(c.get("rule"), str) and c.get("rule") not in ("judgement", "") and "result" in c:
         fn = RULES.get(c["rule"])
         if fn is None:
             steps[3] = "NOT RUN"; reasons[3] = "rule specification not held: %s" % c["rule"]
         else:
-            body = r.get("body")
             try:
-                got = fn(body if isinstance(body, dict) else {}, c.get("inputs"))
+                got = fn(r, ctx, relied_indices)
+            except RuleNotRun as e:
+                steps[3] = "NOT RUN"; reasons[3] = "rule input: %s" % e
             except RuleTypeError as e:
                 steps[3] = "FAIL"; reasons[3] = "rule input: %s" % e
             else:

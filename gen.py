@@ -139,6 +139,61 @@ V("f01-appendix-a", "Appendix A", "The draft's own example. Its digest is 2a85c9
   APPX_REC, "held", {"1": "PASS", "2": "NOT RUN", "3": "PASS"}, items=(APPX_CLAIM,),
   policy={"judgement_kinds": ["model-decision"], "formats": [], "max_depth": 2}, interp="I-4")
 
+# ---- Group F (cont.): Appendix A.2 (-02): rule re-run on cited delegation records ----
+A2_FMT = "https://datatracker.ietf.org/doc/draft-durga-agenttrust-trace-verification/"
+A2_RULE = "urn:example:verdict-record:rule:hop-continuity-attenuation:v1"
+A2_HOP0 = b'{"expires_at":1793463600,"granted_scopes":["mcp:tool:erp.ledger.read","mcp:max_rows:100"],"issued_at":1793460000}'
+A2_HOP1_POS = b'{"expires_at":1793463600,"granted_scopes":["mcp:tool:erp.ledger.read"],"issued_at":1793460000,"parent_record_hash":"1336337e88adc67853b80b4998363210dc5c0797cc7b7c722128cecc56a38c14"}'
+A2_HOP1_N1 = b'{"expires_at":1793463600,"granted_scopes":["mcp:tool:erp.ledger.read","mcp:tool:erp.ledger.write"],"issued_at":1793460000,"parent_record_hash":"1336337e88adc67853b80b4998363210dc5c0797cc7b7c722128cecc56a38c14"}'
+A2_HOP1_N2 = b'{"expires_at":1793463600,"granted_scopes":["mcp:tool:erp.ledger.read"],"issued_at":1793460000,"parent_record_hash":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"}'
+assert H(A2_HOP0) == "1336337e88adc67853b80b4998363210dc5c0797cc7b7c722128cecc56a38c14"
+assert H(A2_HOP1_POS) == "8886795d4403b5cd8820eb813ee0724f1d6d5d383124364b09cdc5020639e00c"
+assert H(A2_HOP1_N1) == "4f94097c428f758a9f8119e0f35dd834f2d544e9ad31c06314361dadbf43ff29"
+assert H(A2_HOP1_N2) == "968c3cd4a186b5d5324c55061aaa4cd0f214dd925ca2800b6afffac3b442a171"
+
+def a2_rec(hop1_bytes, key="agenttrust/trace/hop-1"):
+    return C({
+        "act_time": "2026-10-31T18:00:00.000000Z",
+        "actor": {"id": "agenttrust-trace-checker", "model": "none", "model_version": "0", "type": "system"},
+        "body": {"claim": {"text": "hop[1] preserves SHA-256 parent_record_hash continuity and monotonic scope attenuation from hop[0]"}},
+        "check": {
+            "inputs": {
+                "child_scopes": {"evidence": 1, "pointer": "/granted_scopes"},
+                "parent_digest": {"evidence": 0},
+                "parent_hash": {"evidence": 1, "pointer": "/parent_record_hash"},
+                "parent_scopes": {"evidence": 0, "pointer": "/granted_scopes"}
+            },
+            "result": "attenuated_and_linked",
+            "rule": A2_RULE
+        },
+        "evidence": [ent(A2_HOP0, A2_FMT), ent(hop1_bytes, A2_FMT)],
+        "key": key,
+        "kind": "check-run",
+        "supersedes": None,
+        "v": "verdict-record/1",
+        "version": 1,
+        "writer": "agenttrust-reference-verifier"
+    })
+
+A2_REC_POS = a2_rec(A2_HOP1_POS, "agenttrust/trace/hop-1")
+assert H(A2_REC_POS) == "62017940a8ddddd5ddd7ff46c8ff2a6ce79dfcccb775d767b8dff8db0ebe19ed"
+A2_REC_N1 = a2_rec(A2_HOP1_N1, "agenttrust/trace/hop-1-neg-widened-scope")
+A2_REC_N2 = a2_rec(A2_HOP1_N2, "agenttrust/trace/hop-1-neg-broken-parent-hash")
+A2_POLICY = {"judgement_kinds": ["model-decision"], "formats": [A2_FMT], "max_depth": 2}
+
+V("f02-appendix-a2-released", "Appendix A.2, 4.3, 4.5",
+  "Appendix A.2 positive example (digest 62017940...): hop[1] preserves parent_record_hash continuity and attenuates granted_scopes from hop[0]. Under signature-exempt JSON hop verification, the rule re-runs to attenuated_and_linked and the record is released.",
+  A2_REC_POS, "released", P3, items=(A2_HOP0, A2_HOP1_POS), policy=A2_POLICY)
+V("f03-appendix-a2-widened-scope", "Appendix A.2, 4.3 step 3, 4.4",
+  "Appendix A.2 negative vector N1 (scope widening): hop[1] appends 'mcp:tool:erp.ledger.write' not present in hop[0].granted_scopes while the record states 'attenuated_and_linked'. The rule re-runs to 'not_attenuated_or_not_linked' and step 3 FAILs (refused).",
+  A2_REC_N1, "refused", {"1": "PASS", "2": "PASS", "3": "FAIL"}, items=(A2_HOP0, A2_HOP1_N1), policy=A2_POLICY)
+V("f04-appendix-a2-broken-parent-hash", "Appendix A.2, 4.3 step 3, 4.4",
+  "Appendix A.2 negative vector N2 (broken parent_record_hash): hop[1] attenuates scopes but alters parent_record_hash to 'ffff...ffff', breaking digest continuity from hop[0]. The rule re-runs to 'not_attenuated_or_not_linked' and step 3 FAILs (refused).",
+  A2_REC_N2, "refused", {"1": "PASS", "2": "PASS", "3": "FAIL"}, items=(A2_HOP0, A2_HOP1_N2), policy=A2_POLICY)
+V("f05-appendix-a2-withheld-child-hop", "Appendix A.2, 4.3 steps 2 and 3, 4.4",
+  "Appendix A.2 negative vector N3 (withheld child hop): the positive Appendix A.2 record (digest 62017940...) is presented with hop[0] only; evidence[1] (hop[1]) is not held, so steps 2 and 3 are NOT RUN and the record is held.",
+  A2_REC_POS, "held", {"1": "PASS", "2": "NOT RUN", "3": "NOT RUN"}, items=(A2_HOP0,), policy=A2_POLICY)
+
 # ---- Group E: policy ----
 V("e01-invalid-policy", "4.4, 4.5", "The checker's policy is invalid: no verdict.", base, "no verdict", None,
   policy={"judgement_kinds": ["model-decision"], "formats": [OPAQUE], "max_depth": -1}, interp="I-8")

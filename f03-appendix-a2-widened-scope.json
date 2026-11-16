@@ -1,0 +1,34 @@
+{
+  "name": "f03-appendix-a2-widened-scope",
+  "section": "Appendix A.2, 4.3 step 3, 4.4",
+  "description": "Appendix A.2 negative vector N1 (scope widening): hop[1] appends 'mcp:tool:erp.ledger.write' not present in hop[0].granted_scopes while the record states 'attenuated_and_linked'. The rule re-runs to 'not_attenuated_or_not_linked' and step 3 FAILs (refused).",
+  "record_b64": "eyJhY3RfdGltZSI6IjIwMjYtMTAtMzFUMTg6MDA6MDAuMDAwMDAwWiIsImFjdG9yIjp7ImlkIjoiYWdlbnR0cnVzdC10cmFjZS1jaGVja2VyIiwibW9kZWwiOiJub25lIiwibW9kZWxfdmVyc2lvbiI6IjAiLCJ0eXBlIjoic3lzdGVtIn0sImJvZHkiOnsiY2xhaW0iOnsidGV4dCI6ImhvcFsxXSBwcmVzZXJ2ZXMgU0hBLTI1NiBwYXJlbnRfcmVjb3JkX2hhc2ggY29udGludWl0eSBhbmQgbW9ub3RvbmljIHNjb3BlIGF0dGVudWF0aW9uIGZyb20gaG9wWzBdIn19LCJjaGVjayI6eyJpbnB1dHMiOnsiY2hpbGRfc2NvcGVzIjp7ImV2aWRlbmNlIjoxLCJwb2ludGVyIjoiL2dyYW50ZWRfc2NvcGVzIn0sInBhcmVudF9kaWdlc3QiOnsiZXZpZGVuY2UiOjB9LCJwYXJlbnRfaGFzaCI6eyJldmlkZW5jZSI6MSwicG9pbnRlciI6Ii9wYXJlbnRfcmVjb3JkX2hhc2gifSwicGFyZW50X3Njb3BlcyI6eyJldmlkZW5jZSI6MCwicG9pbnRlciI6Ii9ncmFudGVkX3Njb3BlcyJ9fSwicmVzdWx0IjoiYXR0ZW51YXRlZF9hbmRfbGlua2VkIiwicnVsZSI6InVybjpleGFtcGxlOnZlcmRpY3QtcmVjb3JkOnJ1bGU6aG9wLWNvbnRpbnVpdHktYXR0ZW51YXRpb246djEifSwiZXZpZGVuY2UiOlt7ImZvcm1hdCI6Imh0dHBzOi8vZGF0YXRyYWNrZXIuaWV0Zi5vcmcvZG9jL2RyYWZ0LWR1cmdhLWFnZW50dHJ1c3QtdHJhY2UtdmVyaWZpY2F0aW9uLyIsInNoYTI1NiI6IjEzMzYzMzdlODhhZGM2Nzg1M2I4MGI0OTk4MzYzMjEwZGM1YzA3OTdjYzdiN2M3MjIxMjhjZWNjNTZhMzhjMTQifSx7ImZvcm1hdCI6Imh0dHBzOi8vZGF0YXRyYWNrZXIuaWV0Zi5vcmcvZG9jL2RyYWZ0LWR1cmdhLWFnZW50dHJ1c3QtdHJhY2UtdmVyaWZpY2F0aW9uLyIsInNoYTI1NiI6IjRmOTQwOTdjNDI4Zjc1OGE5ZjgxMTllMGYzNWRkODM0ZjJkNTQ0ZTlhZDMxYzA2MzE0MzYxZGFkYmY0M2ZmMjkifV0sImtleSI6ImFnZW50dHJ1c3QvdHJhY2UvaG9wLTEtbmVnLXdpZGVuZWQtc2NvcGUiLCJraW5kIjoiY2hlY2stcnVuIiwic3VwZXJzZWRlcyI6bnVsbCwidiI6InZlcmRpY3QtcmVjb3JkLzEiLCJ2ZXJzaW9uIjoxLCJ3cml0ZXIiOiJhZ2VudHRydXN0LXJlZmVyZW5jZS12ZXJpZmllciJ9",
+  "record_sha256": "3b5aeff5dfb7cde46a7e94d81b8542035d5fb73847b7fb38956c83ae019a233d",
+  "evidence_items": [
+    {
+      "b64": "eyJleHBpcmVzX2F0IjoxNzkzNDYzNjAwLCJncmFudGVkX3Njb3BlcyI6WyJtY3A6dG9vbDplcnAubGVkZ2VyLnJlYWQiLCJtY3A6bWF4X3Jvd3M6MTAwIl0sImlzc3VlZF9hdCI6MTc5MzQ2MDAwMH0="
+    },
+    {
+      "b64": "eyJleHBpcmVzX2F0IjoxNzkzNDYzNjAwLCJncmFudGVkX3Njb3BlcyI6WyJtY3A6dG9vbDplcnAubGVkZ2VyLnJlYWQiLCJtY3A6dG9vbDplcnAubGVkZ2VyLndyaXRlIl0sImlzc3VlZF9hdCI6MTc5MzQ2MDAwMCwicGFyZW50X3JlY29yZF9oYXNoIjoiMTMzNjMzN2U4OGFkYzY3ODUzYjgwYjQ5OTgzNjMyMTBkYzVjMDc5N2NjN2I3YzcyMjEyOGNlY2M1NmEzOGMxNCJ9"
+    }
+  ],
+  "upper_time_bound": "2026-11-01T12:00:00.000000Z",
+  "policy": {
+    "judgement_kinds": [
+      "model-decision"
+    ],
+    "formats": [
+      "https://datatracker.ietf.org/doc/draft-durga-agenttrust-trace-verification/"
+    ],
+    "max_depth": 2
+  },
+  "policy_sha256": "0bf7355bb5d025d37013cdf16cb798d869c5fbef0e4bf29a335dfdf8a477053b",
+  "expected": {
+    "state": "refused",
+    "steps": {
+      "1": "PASS",
+      "2": "PASS",
+      "3": "FAIL"
+    }
+  }
+}

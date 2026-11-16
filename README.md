@@ -37,6 +37,8 @@ So that the vectors do not depend on any other format's rules, they use these:
 - `urn:example:verdict-record:format:never-verifies`: no item verifies.
 - `verdict-record/1`: the item is a verdict record, checked by Section 4 as a record of
   its own. It verifies when its state is `released`.
+- `https://datatracker.ietf.org/doc/draft-durga-agenttrust-trace-verification/`: used by
+  the Appendix A.2 vectors (`f02`–`f05`) for signature-exempt JSON hop verification.
 
 ## Test-only rule
 
@@ -46,6 +48,12 @@ So that the vectors do not depend on any other format's rules, they use these:
 - Both named members must be integers. Otherwise the rule's input is of the wrong type,
   which is a FAIL of step 3.
 - The result is `"pass"` when body[value] >= body[min], else `"fail"`.
+
+`urn:example:verdict-record:rule:hop-continuity-attenuation:v1` (Appendix A.2 of `-02`):
+- `check.inputs` names `parent_hash`, `parent_digest`, `parent_scopes` and `child_scopes`,
+  bound to cited evidence items via Section 2.2 JSON Pointers.
+- The result is `"attenuated_and_linked"` when `parent_hash == parent_digest` and every
+  member of `child_scopes` is in `parent_scopes`, else `"not_attenuated_or_not_linked"`.
 
 ## Running the checkers
 
