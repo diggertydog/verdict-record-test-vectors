@@ -1,0 +1,53 @@
+{
+ "case_commit": "076e40579aa6fa41899d552360ab771384e57a1e",
+ "results": [
+  {
+   "case": "p1-pass",
+   "record_sha256": "64d39b76738c8483a85af326019a37efe0d3ba4fa2340aa4faa79fc817f6489e",
+   "state": "released",
+   "steps": {
+    "1": "PASS",
+    "2": "PASS",
+    "3": "PASS"
+   },
+   "stated": "released",
+   "agrees": true
+  },
+  {
+   "case": "n1-stated-fail",
+   "record_sha256": "7298c251fc0b19ec0e2c4cbf573fe5c9ee9501497f6417e42e50121f840dbe0d",
+   "state": "refused",
+   "steps": {
+    "1": "PASS",
+    "2": "PASS",
+    "3": "FAIL"
+   },
+   "stated": "refused",
+   "agrees": true
+  },
+  {
+   "case": "n2-tampered-item",
+   "record_sha256": "88df2ae70411465c1c4a60518998e18d1206de94c055ddddcb8392d15c696f7d",
+   "state": "held",
+   "steps": {
+    "1": "PASS",
+    "2": "NOT RUN",
+    "3": "NOT RUN"
+   },
+   "stated": "held",
+   "agrees": true
+  },
+  {
+   "case": "n3-key-not-held",
+   "record_sha256": "4917fc9a19bc7a8cfb6cd6433b3190d8d1c4f3300f25eceb8dbd489a4d6eab01",
+   "state": "held",
+   "steps": {
+    "1": "PASS",
+    "2": "NOT RUN",
+    "3": "NOT RUN"
+   },
+   "stated": "held",
+   "agrees": true
+  }
+ ]
+}

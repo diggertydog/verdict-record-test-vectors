@@ -134,6 +134,24 @@ request #108), and refuses to load if the pinned reference check stops reporting
 either dimension at anything but verified, so `interop/one-chain/check_required.py` shows the requirement on the
 case's positive inputs with each dimension's answer replaced: the held rule gives `not_as_approved` each time.
 
+
+## The work-acceptance interop case
+
+`interop/work-acceptance/run.py` runs four verdict records from babyblueviper1/preaction-governance-conformance
+(`examples/verdict-record-work-acceptance`, commit 076e405). Each record cites a signed work-acceptance record as
+evidence and re-derives that record's verdict from its per-criterion results. The evidence is a real record
+(`e62b9963...`, holistis/agent-receipt-verify#103), plus one tampered copy of it.
+
+The format and the rule are held as `held/invinoveritas_work_acceptance.py`, from that case's README (sections "Format"
+and "Rule"). The trust anchor is the issuer's published key document. The format gives no upper time bound, and the
+module says so.
+
+The checker agrees with the case on all four records: p1 is released, n1 is refused at step 3, and n2 and n3 are held.
+
+    git clone https://github.com/babyblueviper1/preaction-governance-conformance wa
+    git -C wa checkout 076e40579aa6fa41899d552360ab771384e57a1e
+    WA_CASE=wa python3 interop/work-acceptance/run.py
+
 ## How the expected answers were checked
 
 - The expected answers were written by hand from the draft text, each with the section (from -02 on, the lines) it
